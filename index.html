@@ -59,7 +59,7 @@
         h1 {
             color: var(--primary);
             margin: 0;
-            font-size: 1.5rem;
+            font-size: 1rem;
             display: flex;
             align-items: center;
         }
@@ -82,6 +82,10 @@
             font-weight: 700;
             letter-spacing: 0.5px;
             box-shadow: 0 2px 4px rgba(30, 58, 138, 0.2);
+        }
+
+        .startBtn {
+            font-size: 1.1rem; padding: 14px 40px; border-radius: 30px;
         }
 
         .btn:hover:not(:disabled) { 
@@ -120,7 +124,7 @@
             color: var(--primary); 
             padding: 6px 14px;
             border-radius: 20px; 
-            font-size: 0.85rem; 
+            font-size: 0.8rem; 
             font-weight: 800;
             margin-left: 12px;
             border: 1px solid rgba(30, 58, 138, 0.1);
@@ -164,15 +168,19 @@
             height: calc(100vh - var(--header-height));
             width: 100%;
             position: relative;
-            padding: 20px;
+            padding: 30px;
             box-sizing: border-box;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         .step {
             display: none;
-            max-width: 700px;
+            width: 100%;
+            max-width: 1300px;
             margin: 0 auto;
-            height: 80%;
+            height: 100%;
             background: white;
             border-radius: 12px;
             box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
@@ -190,11 +198,11 @@
             display: flex;
             flex-direction: column;
             transition: all 0.3s ease;
-            background: transparent;
+            background: transparent;            
         }
 
         .learn-col {
-            border-right: 1px solid var(--border);
+            border-right: 1px solid var(--border);            
         }
 
         .col-header {
@@ -208,7 +216,7 @@
 
         .section-title {
             font-weight: 900;
-            font-size: 1.3rem;
+            font-size: 1rem;
             text-transform: uppercase;
             letter-spacing: 1px;
             color: var(--primary-dark);
@@ -279,8 +287,8 @@
             color: var(--primary);
         }
 
-        h2 { margin-top: 0; color: var(--primary); font-size: 1.3rem; }
-        h3 { color: var(--primary-dark); font-size: 1.1rem; }
+        h2 { margin-top: 0; color: var(--primary); font-size: 1rem; }
+        h3 { color: var(--primary-dark); font-size: 0.8rem; }
         
         /* UNBOLDED FRACTIONS FOR LEFT SIDE */
         .fraction-expr {
@@ -313,8 +321,11 @@
         }
 
         .quote-block {
-            background: white; padding: 15px; border-left: 4px solid var(--primary);
-            border-radius: 0 6px 6px 0; font-size: 1.1rem; text-align: left;
+            background: white; padding: 15px;
+            border-left: 4px solid var(--primary);
+            border-radius: 0 6px 6px 0;
+            font-size: 0.9rem;
+            text-align: left;
             margin: 20px 0; box-shadow: 0 2px 4px rgba(0,0,0,0.05);
         }
 
@@ -342,7 +353,7 @@
         
         .option-card {
             border: 2px dashed #cbd5e1; padding: 15px; border-radius: 6px;
-            cursor: pointer; background: white; transition: all 0.2s; font-size: 1.1rem;
+            cursor: pointer; background: white; transition: all 0.2s; font-size: 0.9rem;
         }
         .option-card:hover { border-color: var(--interactive-accent); background-color: var(--primary-light); }
         .option-card.selected {
@@ -353,18 +364,18 @@
         .interactive-label {
             font-weight: 800;
             color: var(--interactive-accent);
-            font-size: 1.1rem;
+            font-size: 0.9rem;
             margin-bottom: 10px;
             display: block;
         }
 
         .feedback {
-            margin-top: 15px; padding: 15px; border-radius: 6px; display: none; font-size: 0.95rem; line-height: 1.4;
+            margin-top: 15px; padding: 15px; border-radius: 6px; display: none; font-size: 0.85rem; line-height: 1.4;
         }
         .feedback.success { display: block; background-color: var(--success-light); color: var(--success); border: 2px solid #bbf7d0; }
         .feedback.error { display: block; background-color: var(--error-light); color: var(--error); border: 2px solid #fca5a5; }
 
-        table { width: 100%; border-collapse: collapse; background: white; margin-top: 15px; font-size: 0.9rem;}
+        table { width: 100%; border-collapse: collapse; background: white; margin-top: 15px; font-size: 0.85rem;}
         th, td { border: 1px solid var(--border); padding: 10px; text-align: center; }
         th { background-color: var(--primary-light); color: var(--primary); }
 
@@ -494,7 +505,56 @@
             color: var(--success) !important;
             font-weight: bold;
         }
+
+        .title_opener {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        .sub-title_opener {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--interactive-accent);
+            margin-bottom: 30px;
+            background: var(--primary-light);
+            display: inline-block;
+            padding: 6px 18px;
+            border-radius: 20px;
+        }
+
+        p {
+            font-size: 0.85rem;
+            line-height: 1.8;
+            color: var(--text);
+            margin-bottom: 25px;
+        }
+
+        ol >li {
+            font-size: 0.85rem;
+            line-height: 1.8;
+            color: var(--text);
+            margin-bottom: 4px;
+        }
+        
+        .dotted-alert_opener {
+            background-color: #f5f8ff;
+            border: 2px dashed var(--interactive-accent);
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 10px;
+        }
+
+        math {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 0.8rem;
+            math-style: normal;
+            margin: 0 2px;
+        }
+
+
     </style>
+   
 </head>
 <body>
 
@@ -525,20 +585,17 @@
         <div class="column learn-col" style="flex: 100%; border: none; background: white;">
             <div class="col-content" style="display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 50px 30px; height: 100%; box-sizing: border-box;">
                 <div style="max-width: 700px; width: 100%;">
-                    <div style="font-size: 2.5rem; font-weight: 800; color: var(--primary); margin-bottom: 10px;">Fractions and Ratios</div>
-                    <div style="font-size: 1.1rem; font-weight: 700; color: var(--interactive-accent); margin-bottom: 30px; background: var(--primary-light); display: inline-block; padding: 6px 18px; border-radius: 20px;">Expected Time: ~10 minutes</div>
-                    <p style="font-size: 1.2rem; line-height: 1.7; color: var(--text); margin-bottom: 25px;">
-                        Ever wondered how fractions and ratios are related? Learn how in this lesson. You'll also learn how to work with both types of numbers.
+                    <div class="title_opener">Fractions and Ratios</div>
+                    <div class="sub-title_opener">Expected Time: ~10 minutes</div>
+                    <p><span style="font-size: 1rem;"">Ever wondered how fractions and ratios are related? Learn how in this lesson. You'll also learn how to work with both types of numbers.</span>
                     </p>
-                    <div style="background-color: #f5f8ff; border: 2px dashed var(--interactive-accent); padding: 20px; border-radius: 12px; margin-bottom: 35px;">
-                        <p style="font-size: 1.1rem; font-weight: 600; color: var(--primary-dark); margin: 0;">
-                            When you're done, you'll be able to enter the drawing for one of two $25 gift cards.
-                        </p>
+                    <div class="dotted-alert_opener">
+                        <p><span style="font-size: 1rem; font-weight: 600; color: var(--primary-dark); margin: 0;">When you're done, you'll be able to enter the drawing for one of two $25 gift cards.</span></p>
                     </div>
-                    <p style="font-size: 1.25rem; font-weight: 700; color: var(--primary); margin-bottom: 30px;">
-                        Thank you and happy studying!
+                    <p><span style="font-size: 1.25rem; font-weight: 700; color: var(--primary); margin-bottom: 30px;">Thank you and happy studying!</span> 
+                        
                     </p>
-                    <button class="btn" style="font-size: 1.1rem; padding: 14px 40px; border-radius: 30px;" onclick="changeStep(1)">Start Module &rarr;</button>
+                    <button class="btn startBtn" onclick="changeStep(1)">Start Module &rarr;</button>
                 </div>
             </div>
         </div>
@@ -553,14 +610,14 @@
             </div>
             <div class="col-content">
                 <h2>Base Relationships</h2>
-                <p>Fractions are most often used to express numbers that fall in between integers. For example, the fraction <span class="fraction-expr"><span class="fraction"><span class="numerator">13</span><span class="denominator">2</span></span></span>, which equals 6.5, falls between the integers 6 and 7.</p>
-                <p>All fractions express what's called a <strong>part-to-whole</strong> relationship. The top number (the numerator) is the part and the bottom number (the denominator) is the whole. For example, if you eat 5 of the 8 slices in a pizza, you have eaten 5 parts out of 8 (the whole pizza), or <span class="fraction-expr"><span class="fraction"><span class="numerator">5</span><span class="denominator">8</span></span></span> of the pizza. You left <span class="fraction-expr"><span class="fraction"><span class="numerator">3</span><span class="denominator">8</span></span></span> of the pizza for your friend Sam.</p>
+                <p>Fractions are most often used to express numbers that fall in between integers. For example, the fraction <math display="inline"><mfrac><mn>13</mn><mn>2</mn></mfrac></math> <!-- <span class="fraction-expr"><span class="fraction"><span class="numerator">13</span><span class="denominator">2</span></span></span> -->, which equals 6.5, falls between the integers 6 and 7.</p>
+                <p>All fractions express what's called a <strong>part-to-whole</strong> relationship. The top number (the numerator) is the part and the bottom number (the denominator) is the whole. For example, if you eat 5 of the 8 slices in a pizza, you have eaten 5 parts out of 8 (the whole pizza), or <math display="inline"><mfrac><mn>5</mn><mn>8</mn></mfrac></math><!-- <span class="fraction-expr"><span class="fraction"><span class="numerator">5</span><span class="denominator">8</span></span></span> --> of the pizza. You left <math display="inline"><mfrac><mn>3</mn><mn>8</mn></mfrac></math><!-- <span class="fraction-expr"><span class="fraction"><span class="numerator">3</span><span class="denominator">8</span></span></span> --> of the pizza for your friend Sam.</p>
                 
                 <hr style="border: 0; border-top: 1px solid var(--border); margin: 20px 0;">
 
                 <p>Ratios, on the other hand, express what's called a <strong>part-to-part</strong> relationship. In the pizza example, you ate 5 parts and Sam ate 3 parts. The ratio of pizza that you ate to pizza that Sam ate is 5 to 3.</p>
                 <p>Something interesting happens here: Notice that the 5 and the 3 are the numerators of the two fractions from the prior paragraph. A ratio consists of all the parts of a whole—and you can actually create the whole by adding up the parts! In this case, 5 + 3 = 8, which is the whole, or the denominator, of the fractions. When talking about ratios, this whole is called the <strong>ratio total</strong>.</p>
-                <p>You can convert any fraction to a ratio and vice versa. If a bouquet of flowers has 1 rose for every 3 tulips, then the ratio of roses to tulips is 1:3. The whole is 1 + 3 = 4. Therefore, <span class="fraction-expr"><span class="fraction"><span class="numerator">1</span><span class="denominator">4</span></span></span> of the bouquet consists of roses and <span class="fraction-expr"><span class="fraction"><span class="numerator">3</span><span class="denominator">4</span></span></span> consists of tulips.</p>
+                <p>You can convert any fraction to a ratio and vice versa. If a bouquet of flowers has 1 rose for every 3 tulips, then the ratio of roses to tulips is 1:3. The whole is 1 + 3 = 4. Therefore, <math display="inline"><mfrac><mn>1</mn><mn>4</mn></mfrac></math><!-- <span class="fraction-expr"><span class="fraction"><span class="numerator">1</span><span class="denominator">4</span></span></span> --> of the bouquet consists of roses and <math display="inline"><mfrac><mn>3</mn><mn>4</mn></mfrac></math><!-- <span class="fraction-expr"><span class="fraction"><span class="numerator">3</span><span class="denominator">4</span></span></span> --> consists of tulips.</p>
             </div>
         </div>
         
@@ -577,7 +634,7 @@
                         <span>Attempts remaining: <span id="s1-attempts">5</span></span>
                     </div>
                     
-                    <div class="quote-block" id="s1-problem-text" style="font-weight: bold; font-size: 1.3rem;">
+                    <div class="quote-block" id="s1-problem-text" style="font-weight: bold;">
                         </div>
                     
                     <div style="display: flex; align-items: center; justify-content: center; gap: 15px; margin: 20px 0; background: #fff; padding: 20px; border-radius: 8px; border: 2px dashed #cbd5e1;">
@@ -607,7 +664,7 @@
             </div>
             <div class="col-content">
                 <h2>Ratio Labels & Formats</h2>
-                <p>Ratios can be written in three different ways: <strong>1 to 3</strong>; <strong>1:3</strong>; <span class="fraction-expr"><span class="fraction"><span class="numerator">1</span><span class="denominator">3</span></span></span>. In the third case, you'll need to learn how to read the sentence to know whether it's talking about a fraction or a ratio.</p>
+                <p>Ratios can be written in three different ways: <strong>1 to 3</strong>; <strong>1:3</strong>; <math display="inline"><mfrac><mn>1</mn><mn>3</mn></mfrac></math><!-- <span class="fraction-expr"><span class="fraction"><span class="numerator">1</span><span class="denominator">3</span></span></span> -->. In the third case, you'll need to learn how to read the sentence to know whether it's talking about a fraction or a ratio.</p>
                 <p>Fractions will always have two portions (with the part on top and the whole on the bottom), but ratios can have two or more portions. For example, you could have 2 horses to 3 rabbits to 7 llamas, or a ratio of 2:3:7.</p>
                 <p>Finally, fractions and ratios both express a relationship between two (or more) items, but by themselves they do not tell you the exact quantities in question. Knowing that the ratio of dogs to cats is 2 to 3 does not indicate the actual number of dogs and cats. There could be 2 dogs and 3 cats, or 6 dogs and 9 cats.</p>
                 
@@ -628,11 +685,11 @@
                 <div class="interactive-panel">
                     <h3>⚠️ The Ratio Reversal Trap</h3>
                     <p>Read the statement below. Pay extremely close attention to the requested order to avoid falling into a classic trap.</p>
-                    <div style="display: flex; justify-content: space-between; font-size: 0.9rem; color: #666;">
+                    <div style="display: flex; justify-content: space-between; color: #666;">
                         <span>Attempts remaining: <span id="s2-attempts">5</span></span>
                     </div>
                     
-                    <div class="quote-block" id="s2-problem-text" style="font-weight: bold; font-size: 1.2rem;">
+                    <div class="quote-block" id="s2-problem-text" style="font-weight: bold;">
                         </div>
                     
                     <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 20px;" id="s2-options-container">
@@ -979,7 +1036,7 @@
     </div>
 
     <!-- Step 8 (Final Page - Google Survey) -->
-    <div class="step" id="step8" style="padding: 0; background: white; height: 100%; display: flex; flex-direction: column;">
+    <div class="step" id="step8" style="padding: 0; background: white; height: 100%; flex-direction: column;">
         <div style="text-align: center; padding: 12px 10px 5px 10px; background: #f5f8ff; border-bottom: 1px solid var(--border);">
             <h2 style="margin: 0; color: var(--primary); font-size: 1.5rem; font-weight: 800;">🎉 Congrats! You did it! 🎉</h2>
         </div>
@@ -989,6 +1046,7 @@
     </div>
 
 </main>
+
 
 <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 
