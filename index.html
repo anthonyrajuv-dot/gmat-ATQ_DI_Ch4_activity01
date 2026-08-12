@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,8 +19,8 @@
             --pizza-color: #f59e0b;
             --interactive-accent: #4f46e5;
             --interactive-bg: #fafafa;
-            --dynamic-text: #ea580c; 
-            --header-height: 110px; 
+            --dynamic-text: #ea580c;
+            --header-height: 110px;
         }
 
         body {
@@ -43,7 +44,7 @@
             width: 100%;
             height: var(--header-height);
             background: white;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             z-index: 1000;
             padding: 10px 30px;
             box-sizing: border-box;
@@ -88,11 +89,13 @@
         }
 
         .startBtn {
-            font-size: 1.1rem; padding: 14px 40px; border-radius: 30px;
+            font-size: 1.1rem;
+            padding: 14px 40px;
+            border-radius: 30px;
         }
 
-        .btn:hover:not(:disabled) { 
-            background-color: var(--primary-dark); 
+        .btn:hover:not(:disabled) {
+            background-color: var(--primary-dark);
             transform: translateY(-1px);
             box-shadow: 0 4px 8px rgba(30, 58, 138, 0.3);
         }
@@ -102,32 +105,32 @@
             box-shadow: 0 1px 2px rgba(30, 58, 138, 0.2);
         }
 
-        .btn:disabled { 
-            background-color: #e5e7eb; 
+        .btn:disabled {
+            background-color: #e5e7eb;
             color: #9ca3af;
-            cursor: not-allowed; 
+            cursor: not-allowed;
             box-shadow: none;
         }
-        
+
         .btn-secondary {
             background-color: white;
             color: var(--text);
             border: 1px solid var(--border);
-            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
         }
-        
-        .btn-secondary:hover:not(:disabled) { 
-            background-color: #f9fafb; 
+
+        .btn-secondary:hover:not(:disabled) {
+            background-color: #f9fafb;
             border-color: #d1d5db;
         }
 
         .badge {
             font-family: inherit;
-            background: var(--primary-light); 
-            color: var(--primary); 
+            background: var(--primary-light);
+            color: var(--primary);
             padding: 6px 14px;
-            border-radius: 20px; 
-            font-size: 0.8rem; 
+            border-radius: 20px;
+            font-size: 0.8rem;
             font-weight: 800;
             margin-left: 12px;
             border: 1px solid rgba(30, 58, 138, 0.1);
@@ -161,7 +164,7 @@
         .progress {
             background-color: var(--interactive-accent);
             height: 100%;
-            width: 0%; 
+            width: 0%;
             transition: width 0.5s ease-out;
         }
 
@@ -204,11 +207,11 @@
             display: flex;
             flex-direction: column;
             transition: all 0.3s ease;
-            background: transparent;            
+            background: transparent;
         }
 
         .learn-col {
-            border-right: 1px solid var(--border);            
+            border-right: 1px solid var(--border);
         }
 
         .col-header {
@@ -293,46 +296,95 @@
             color: var(--primary);
         }
 
-        h2 { margin-top: 0; color: var(--primary); font-size: 1rem; }
-        h3 { color: var(--primary-dark); font-size: 0.8rem; }
-        
+        h2 {
+            margin-top: 0;
+            color: var(--primary);
+            font-size: 1rem;
+        }
+
+        h3 {
+            color: var(--primary-dark);
+            font-size: 0.8rem;
+        }
+
         /* UNBOLDED FRACTIONS FOR LEFT SIDE */
         .fraction-expr {
-            display: inline-flex; vertical-align: middle; margin: 0 2px; font-size: 1.05rem; font-weight: normal; color: var(--text);
+            display: inline-flex;
+            vertical-align: middle;
+            margin: 0 2px;
+            font-size: 0.85rem;
+            font-weight: normal;
+            color: var(--text);
         }
-        .fraction { display: inline-flex; flex-direction: column; align-items: center; line-height: 1.2; font-weight: normal;}
-        .fraction .numerator { border-bottom: 1px solid var(--text); padding: 0 2px; font-size: 0.8rem; font-weight: normal;}
-        .fraction .denominator { padding: 0 2px; font-size: 0.8rem; font-weight: normal;} 
+
+        #s6-top-frac .fraction-expr {
+            font-size: 1.4rem;
+        }
+        
+        #s6-problem-text .fraction-expr {
+            font-size: 1.1rem;
+        }
+
+        #s6-problem-text .fraction-expr .fraction {
+            width: 40px;
+        }
+
+        .fraction {
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            line-height: 1.2;
+            font-weight: normal;
+        }
+
+        .fraction .numerator {
+            border-bottom: 1px solid var(--text);
+            padding: 0 2px;
+            font-weight: normal;
+        }
+
+        .fraction .denominator {
+            padding: 0 2px;
+            font-weight: normal;
+        }
 
         /* FORCE NORMAL WEIGHT ON LEFT SIDE */
-        .learn-col .fraction-expr, .learn-col .fraction .numerator, .learn-col .fraction .denominator {
+        .learn-col .fraction-expr,
+        .learn-col .fraction .numerator,
+        .learn-col .fraction .denominator {
             font-weight: normal !important;
             color: var(--text) !important;
         }
 
         /* EMPHASIZED TEXT FOR RIGHT SIDE */
         .prove-it-frac {
-            font-weight: bold !important; 
+            font-weight: bold !important;
             color: var(--primary) !important;
         }
-        .prove-it-frac .numerator { border-bottom: 2px solid var(--primary) !important; }
+
+        .prove-it-frac .numerator {
+            border-bottom: 2px solid var(--primary) !important;
+        }
 
         /* CHANGING DYNAMIC TEXT CLASSES */
         .dynamic-text {
             color: var(--dynamic-text) !important;
             font-weight: 900 !important;
         }
+
         .dynamic-frac .numerator {
             border-bottom: 2px solid var(--dynamic-text) !important;
         }
 
         .quote-block {
-            background: white; padding: 15px;
+            background: white;
+            padding: 15px;
             border-left: 4px solid var(--primary);
             border-radius: 0 6px 6px 0;
             font-size: 0.85rem;
             text-align: left;
-            margin: 20px 0; box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            margin: 20px 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
         }
 
         /* Highly visible interactive inputs */
@@ -347,24 +399,37 @@
             color: var(--primary-dark);
             background-color: #eef2ff;
             margin: 0 5px;
-            box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
             transition: all 0.2s;
         }
+
         .interactive-input:focus {
             outline: none;
             border-color: #f59e0b;
             background-color: #fff;
             box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.2);
         }
-        
+
         .option-card {
-            border: 2px dashed #cbd5e1; padding: 15px; border-radius: 6px;
-            cursor: pointer; background: white; transition: all 0.2s; font-size: 0.9rem;
+            border: 2px dashed #cbd5e1;
+            padding: 15px;
+            border-radius: 6px;
+            cursor: pointer;
+            background: white;
+            transition: all 0.2s;
+            font-size: 0.9rem;
         }
-        .option-card:hover { border-color: var(--interactive-accent); background-color: var(--primary-light); }
+
+        .option-card:hover {
+            border-color: var(--interactive-accent);
+            background-color: var(--primary-light);
+        }
+
         .option-card.selected {
-            border-style: solid; border-color: var(--interactive-accent);
-            background-color: var(--primary-light); font-weight: bold;
+            border-style: solid;
+            border-color: var(--interactive-accent);
+            background-color: var(--primary-light);
+            font-weight: bold;
         }
 
         .interactive-label {
@@ -376,23 +441,71 @@
         }
 
         .feedback {
-            margin-top: 15px; padding: 15px; border-radius: 6px; display: none; font-size: 0.85rem; line-height: 1.4;
+            margin-top: 15px;
+            padding: 15px;
+            border-radius: 6px;
+            display: none;
+            font-size: 0.85rem;
+            line-height: 1.4;
         }
-        .feedback.success { display: block; background-color: var(--success-light); color: var(--success); border: 2px solid #bbf7d0; }
-        .feedback.error { display: block; background-color: var(--error-light); color: var(--error); border: 2px solid #fca5a5; }
 
-        table { width: 100%; border-collapse: collapse; background: white; margin-top: 15px; font-size: 0.75rem;}
-        th, td { border: 1px solid var(--border); padding: 10px; text-align: center; }
-        th { background-color: var(--primary-light); color: var(--primary); }
+        .feedback.success {
+            display: block;
+            background-color: var(--success-light);
+            color: var(--success);
+            border: 2px solid #bbf7d0;
+        }
+
+        .feedback.error {
+            display: block;
+            background-color: var(--error-light);
+            color: var(--error);
+            border: 2px solid #fca5a5;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            margin-top: 15px;
+            font-size: 0.75rem;
+        }
+
+        th,
+        td {
+            border: 1px solid var(--border);
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background-color: var(--primary-light);
+            color: var(--primary);
+        }
 
         .try-another-btn {
-            margin-top: 15px; width: 100%; background-color: var(--interactive-accent);
+            margin-top: 15px;
+            width: 100%;
+            background-color: var(--interactive-accent);
             display: none;
         }
 
-        .slider-container { margin: 20px 0; background: #eef2ff; padding: 15px; border-radius: 8px; border: 3px solid var(--interactive-accent); }
-        .slider-label { display: flex; justify-content: space-between; font-weight: bold; margin-bottom: 5px; color: var(--primary-dark);}
-        
+        .slider-container {
+            margin: 20px 0;
+            background: #eef2ff;
+            padding: 15px;
+            border-radius: 8px;
+            border: 3px solid var(--interactive-accent);
+        }
+
+        .slider-label {
+            display: flex;
+            justify-content: space-between;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: var(--primary-dark);
+        }
+
         input[type=range] {
             accent-color: var(--interactive-accent);
             height: 8px;
@@ -421,7 +534,7 @@
             cursor: pointer;
             transition: all 0.2s;
             display: flex;
-            flex-direction: column-reverse; 
+            flex-direction: column-reverse;
             align-items: center;
             gap: 4px;
             min-width: 60px;
@@ -477,7 +590,7 @@
             background: white;
             padding: 18px;
             border-radius: 8px;
-            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
             text-align: center;
             font-size: 1.05rem;
             border: 2px solid var(--primary);
@@ -505,7 +618,9 @@
             font-weight: bold;
         }
 
-        .hidden { display: none !important; }
+        .hidden {
+            display: none !important;
+        }
 
         .final-answer {
             color: var(--success) !important;
@@ -518,6 +633,7 @@
             color: var(--primary);
             margin-bottom: 20px;
         }
+
         .sub-title_opener {
             font-size: 1.1rem;
             font-weight: 700;
@@ -536,20 +652,20 @@
             margin-bottom: 25px;
         }
 
-        ol >li {
+        ol>li {
             font-size: 0.85rem;
             line-height: 1.8;
             color: var(--text);
             margin-bottom: 4px;
         }
-        
-        ul >li {
+
+        ul>li {
             font-size: 0.85rem;
             line-height: 1.8;
             color: var(--text);
             margin-bottom: 4px;
-        }        
-        
+        }
+
         .dotted-alert_opener {
             background-color: #f5f8ff;
             border: 2px dashed var(--interactive-accent);
@@ -562,1294 +678,1487 @@
             font-size: 0.9rem;
         }
 
-.table-scroll {
-    width: 100%;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-}
+        .table-scroll {
+            width: 100%;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
 
-.math-block,
-.equation-container {
-    max-width: 100%;
-    overflow-x: auto;
-}
+        .math-block,
+        .equation-container {
+            max-width: 100%;
+            overflow-x: auto;
+        }
 
         @media (max-width: 890px) {
-    .fixed-header {
-        padding: 10px 18px;
-    }
+            .fixed-header {
+                padding: 10px 18px;
+            }
 
-    .main-workspace {
-        padding: 14px;
-    }
+            .main-workspace {
+                padding: 14px;
+            }
 
-    .col-header {
-        padding: 12px 18px;
-    }
+            .col-header {
+                padding: 12px 18px;
+            }
 
-    .col-content {
-        padding: 20px 22px;
-    }
+            .col-content {
+                padding: 20px 22px;
+            }
 
-    .interactive-panel {
-        padding: 18px;
-    }
+            .interactive-panel {
+                padding: 18px;
+            }
 
-    .math-block {
-        font-size: 1.8rem;
-        gap: 10px;
-    }
+            .math-block {
+                font-size: 1.8rem;
+                gap: 10px;
+            }
 
-    .number-item {
-        font-size: 1.7rem;
-    }
+            .number-item {
+                font-size: 1.7rem;
+            }
 
-    .interactive-input {
-        width: 68px;
-        padding: 8px;
-    }
-}
+            .interactive-input {
+                width: 68px;
+                padding: 8px;
+            }
+        }
 
-@media (max-width: 700px) {
-    body {
-        overflow: auto;
-    }
+        @media (max-width: 700px) {
+            body {
+                overflow: auto;
+            }
 
-    .main-workspace {
-        height: auto;
-        min-height: calc(100vh - var(--header-height));
-        align-items: flex-start;
-    }
+            .main-workspace {
+                height: auto;
+                min-height: calc(100vh - var(--header-height));
+                align-items: flex-start;
+            }
 
-    .step {
-        height: auto;
-        min-height: calc(100vh - var(--header-height) - 24px);
-    }
+            .step {
+                height: auto;
+                min-height: calc(100vh - var(--header-height) - 24px);
+            }
 
-    .step.active {
-        flex-direction: column;
-        overflow-y: visible;
-    }
+            .step.active {
+                flex-direction: column;
+                overflow-y: visible;
+            }
 
-    .column {
-        flex: 0 0 auto;
-        width: 100%;
-        height: auto;
-    }
+            .column {
+                flex: 0 0 auto;
+                width: 100%;
+                height: auto;
+            }
 
-    .learn-col {
-        border-right: none;
-        border-bottom: 1px solid var(--border);
-    }
+            .learn-col {
+                border-right: none;
+                border-bottom: 1px solid var(--border);
+            }
 
-    .col-content {
-        overflow-y: visible;
-        padding: 18px;
-    }
-}
-
+            .col-content {
+                overflow-y: visible;
+                padding: 18px;
+            }
+        }
     </style>
-   
+
 </head>
+
 <body>
 
-<header class="fixed-header">
-    <div class="header-top">
-        <h1>Fractions and Ratios <span class="badge" id="stepBadge">1 of 8</span></h1>
-        <div class="nav-buttons">
-            <button class="btn btn-secondary" id="backBtn" onclick="changeStep(-1)" disabled>Back</button>
-            <button class="btn" id="nextBtn" onclick="changeStep(1)">Next</button>
+    <header class="fixed-header">
+        <div class="header-top">
+            <h1>Fractions and Ratios <span class="badge" id="stepBadge">1 of 8</span></h1>
+            <div class="nav-buttons">
+                <button class="btn btn-secondary" id="backBtn" onclick="changeStep(-1)" disabled>Back</button>
+                <button class="btn" id="nextBtn" onclick="changeStep(1)">Next</button>
+            </div>
         </div>
-    </div>
-    
-    <div class="progress-container-wrapper">
-        <div class="progress-labels">
-            <span>Course Progress</span>
-            <span id="progressPercentText">0%</span>
-        </div>
-        <div class="progress-bar-container">
-            <div class="progress" id="progressBar"></div>
-        </div>
-    </div>
-</header>
 
-<main class="main-workspace">
+        <div class="progress-container-wrapper">
+            <div class="progress-labels">
+                <span>Course Progress</span>
+                <span id="progressPercentText">0%</span>
+            </div>
+            <div class="progress-bar-container">
+                <div class="progress" id="progressBar"></div>
+            </div>
+        </div>
+    </header>
 
-    <!-- Beginning Page -->
-    <div class="step active" id="step1">
-        <div class="column learn-col" style="flex: 100%; border: none; background: white;">
-            <div class="col-content" style="display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 50px 30px; height: 100%; box-sizing: border-box;">
-                <div style="max-width: 700px; width: 100%;">
-                    <div class="title_opener">Fractions and Ratios</div>
-                    <div class="sub-title_opener">Expected Time: ~10 minutes</div>
-                    <p><span style="font-size: 1rem;"">Ever wondered how fractions and ratios are related? Learn how in this lesson. You'll also learn how to work with both types of numbers.</span>
+    <main class="main-workspace">
+
+        <!-- Beginning Page -->
+        <div class="step active" id="step1">
+            <div class="column learn-col" style="flex: 100%; border: none; background: white;">
+                <div class="col-content"
+                    style="display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 50px 30px; height: 100%; box-sizing: border-box;">
+                    <div style="max-width: 700px; width: 100%;">
+                        <div class="title_opener">Fractions and Ratios</div>
+                        <div class="sub-title_opener">Expected Time: ~10 minutes</div>
+                        <p><span style="font-size: 1rem;"">Ever wondered how fractions and ratios are related? Learn how in this lesson. You'll also learn how to work with both types of numbers.</span>
                     </p>
-                    <div class="dotted-alert_opener">
-                        <p><span style="font-size: 1rem; font-weight: 600; color: var(--primary-dark); margin: 0;">When you're done, you'll be able to enter the drawing for one of two $25 gift cards.</span></p>
+                    <div class=" dotted-alert_opener">
+                                <p><span
+                                        style="font-size: 1rem; font-weight: 600; color: var(--primary-dark); margin: 0;">When
+                                        you're done, you'll be able to enter the drawing for one of two $25 gift
+                                        cards.</span></p>
                     </div>
-                    <p><span style="font-size: 1.25rem; font-weight: 700; color: var(--primary); margin-bottom: 30px;">Thank you and happy studying!</span> 
-                        
+                    <p><span style="font-size: 1.25rem; font-weight: 700; color: var(--primary); margin-bottom: 30px;">Thank
+                            you and happy studying!</span>
+
                     </p>
                     <button class="btn startBtn" onclick="changeStep(1)">Start Module &rarr;</button>
                 </div>
             </div>
         </div>
-    </div>
-
-    <!-- Step 2 (Original Lesson 1) -->
-    <div class="step" id="step2">
-        <div class="column learn-col" id="s1-left">
-            <div class="col-header">
-                <span class="section-title">🚀 Learn It!</span>
-                <button class="caret-btn" onclick="toggleCol('s1-left', 's1-right')">▼</button>
-            </div>
-            <div class="col-content">
-                <h2>Base Relationships</h2>
-                <p>Fractions are most often used to express numbers that fall in between integers. For example, the fraction <span class="fraction-expr"><span class="fraction"><span class="numerator">13</span><span class="denominator">2</span></span></span>, which equals 6.5, falls between the integers 6 and 7.</p>
-                <p>All fractions express what's called a <strong>part-to-whole</strong> relationship. The top number (the numerator) is the part and the bottom number (the denominator) is the whole. For example, if you eat 5 of the 8 slices in a pizza, you have eaten 5 parts out of 8 (the whole pizza), or <span class="fraction-expr"><span class="fraction"><span class="numerator">5</span><span class="denominator">8</span></span></span> of the pizza. You left <span class="fraction-expr"><span class="fraction"><span class="numerator">3</span><span class="denominator">8</span></span></span> of the pizza for your friend Sam.</p>
-                
-                <hr style="border: 0; border-top: 1px solid var(--border); margin: 20px 0;">
-
-                <p>Ratios, on the other hand, express what's called a <strong>part-to-part</strong> relationship. In the pizza example, you ate 5 parts and Sam ate 3 parts. The ratio of pizza that you ate to pizza that Sam ate is 5 to 3.</p>
-                <p>Something interesting happens here: Notice that the 5 and the 3 are the numerators of the two fractions from the prior paragraph. A ratio consists of all the parts of a whole—and you can actually create the whole by adding up the parts! In this case, 5 + 3 = 8, which is the whole, or the denominator, of the fractions. When talking about ratios, this whole is called the <strong>ratio total</strong>.</p>
-                <p>You can convert any fraction to a ratio and vice versa. If a bouquet of flowers has 1 rose for every 3 tulips, then the ratio of roses to tulips is 1:3. The whole is 1 + 3 = 4. Therefore, <span class="fraction-expr"><span class="fraction"><span class="numerator">1</span><span class="denominator">4</span></span></span> of the bouquet consists of roses and <span class="fraction-expr"><span class="fraction"><span class="numerator">3</span><span class="denominator">4</span></span></span> consists of tulips.</p>
-            </div>
         </div>
-        
-        <div class="column do-it-col" id="s1-right">
-            <div class="col-header">
-                <span class="section-title">⚡️ Do It!</span>
-                <button class="caret-btn" onclick="toggleCol('s1-right', 's1-left')">▼</button>
-            </div>
-            <div class="col-content">
-                <div class="interactive-panel">
-                    <h3>🧩 The Fraction/Ratio Converter</h3>
-                    <p>Read the given ratio statement carefully. Based on the rules for creating the "ratio total," write the correct corresponding fraction in the bold input boxes below.</p>
-                    <div style="display: flex; justify-content: space-between; font-size: 0.9rem; color: #666;">
-                        <span class="attempt-remain">Attempts remaining: <span id="s1-attempts">5</span></span>
-                    </div>
-                    
-                    <div class="quote-block" id="s1-problem-text" style="font-weight: bold;">
-                        </div>
-                    
-                    <div style="display: flex; align-items: center; justify-content: center; gap: 15px; margin: 20px 0; background: #fff; padding: 20px; border-radius: 8px; border: 2px dashed #cbd5e1;">
-                        <span class="interactive-label" style="margin-bottom:0;" id="s1-question-subject"></span>
-                        <div style="display: flex; flex-direction: column; align-items: center; gap: 5px;">
-                            <input type="number" id="s1-num" class="interactive-input" placeholder="Num">
-                            <div style="width: 100%; height: 3px; background-color: var(--primary);"></div>
-                            <input type="number" id="s1-den" class="interactive-input" placeholder="Den">
-                        </div>
-                    </div>
-                    
-                    <button class="btn" style="width: 100%;" id="checkS1Btn" onclick="checkS1()">Check Fraction</button>
-                    
-                    <div class="feedback" id="s1Feedback"></div>
-                    <button class="btn try-another-btn" id="s1NextBtn" onclick="loadS1()">Try Another Similar Problem</button>
+
+        <!-- Step 2 (Original Lesson 1) -->
+        <div class="step" id="step2">
+            <div class="column learn-col" id="s1-left">
+                <div class="col-header">
+                    <span class="section-title">🚀 Learn It!</span>
+                    <button class="caret-btn" onclick="toggleCol('s1-left', 's1-right')">▼</button>
+                </div>
+                <div class="col-content">
+                    <h2>Base Relationships</h2>
+                    <p>Fractions are most often used to express numbers that fall in between integers. For example, the
+                        fraction <span class="fraction-expr"><span class="fraction"><span
+                                    class="numerator">13</span><span class="denominator">2</span></span></span>, which
+                        equals 6.5, falls between the integers 6 and 7.</p>
+                    <p>All fractions express what's called a <strong>part-to-whole</strong> relationship. The top number
+                        (the numerator) is the part and the bottom number (the denominator) is the whole. For example,
+                        if you eat 5 of the 8 slices in a pizza, you have eaten 5 parts out of 8 (the whole pizza), or
+                        <span class="fraction-expr"><span class="fraction"><span class="numerator">5</span><span
+                                    class="denominator">8</span></span></span> of the pizza. You left <span
+                            class="fraction-expr"><span class="fraction"><span class="numerator">3</span><span
+                                    class="denominator">8</span></span></span> of the pizza for your friend Sam.</p>
+
+                    <hr style="border: 0; border-top: 1px solid var(--border); margin: 20px 0;">
+
+                    <p>Ratios, on the other hand, express what's called a <strong>part-to-part</strong> relationship. In
+                        the pizza example, you ate 5 parts and Sam ate 3 parts. The ratio of pizza that you ate to pizza
+                        that Sam ate is 5 to 3.</p>
+                    <p>Something interesting happens here: Notice that the 5 and the 3 are the numerators of the two
+                        fractions from the prior paragraph. A ratio consists of all the parts of a whole—and you can
+                        actually create the whole by adding up the parts! In this case, 5 + 3 = 8, which is the whole,
+                        or the denominator, of the fractions. When talking about ratios, this whole is called the
+                        <strong>ratio total</strong>.</p>
+                    <p>You can convert any fraction to a ratio and vice versa. If a bouquet of flowers has 1 rose for
+                        every 3 tulips, then the ratio of roses to tulips is 1:3. The whole is 1 + 3 = 4. Therefore,
+                        <span class="fraction-expr"><span class="fraction"><span class="numerator">1</span><span
+                                    class="denominator">4</span></span></span> of the bouquet consists of roses and
+                        <span class="fraction-expr"><span class="fraction"><span class="numerator">3</span><span
+                                    class="denominator">4</span></span></span> consists of tulips.</p>
                 </div>
             </div>
-        </div>
-    </div>
 
-    <!-- Step 3 (Original Lesson 2) -->
-    <div class="step" id="step3">
-        <div class="column learn-col" id="s2-left">
-            <div class="col-header">
-                <span class="section-title">🚀 Learn It!</span>
-                <button class="caret-btn" onclick="toggleCol('s2-left', 's2-right')">▼</button>
-            </div>
-            <div class="col-content">
-                <h2>Ratio Labels & Formats</h2>
-                <p>Ratios can be written in three different ways: <strong>1 to 3</strong>; <strong>1:3</strong>; <span class="fraction-expr"><span class="fraction"><span class="numerator">1</span><span class="denominator">3</span></span></span>. In the third case, you'll need to learn how to read the sentence to know whether it's talking about a fraction or a ratio.</p>
-                <p>Fractions will always have two portions (with the part on top and the whole on the bottom), but ratios can have two or more portions. For example, you could have 2 horses to 3 rabbits to 7 llamas, or a ratio of 2:3:7.</p>
-                <p>Finally, fractions and ratios both express a relationship between two (or more) items, but by themselves they do not tell you the exact quantities in question. Knowing that the ratio of dogs to cats is 2 to 3 does not indicate the actual number of dogs and cats. There could be 2 dogs and 3 cats, or 6 dogs and 9 cats.</p>
-                
-                <hr style="border: 0; border-top: 1px solid var(--border); margin: 20px 0;">
-                
-                <h3>Ratio Labels</h3>
-                <p>It's vital to jot down the order in which the ratio information is given. After all, "the ratio of dogs to cats is 2:3" is very different from "the ratio of dogs to cats is 3:2."</p>
-                <p>It is very easy to accidentally reverse the order of a ratio—especially on a timed test like the GMAT. In order to avoid these reversals, write units on either the ratio itself or on the variables you create, or on both.</p>
-            </div>
-        </div>
-        
-        <div class="column do-it-col" id="s2-right">
-            <div class="col-header">
-                <span class="section-title">⚡️ Do It!</span>
-                <button class="caret-btn" onclick="toggleCol('s2-right', 's2-left')">▼</button>
-            </div>
-            <div class="col-content">
-                <div class="interactive-panel">
-                    <h3>⚠️ The Ratio Reversal Trap</h3>
-                    <p>Read the statement below. Pay extremely close attention to the requested order to avoid falling into a classic trap.</p>
-                    <div style="display: flex; justify-content: space-between; color: #666;">
-                        <span class="attempt-remain">Attempts remaining: <span id="s2-attempts">5</span></span>
-                    </div>
-                    
-                    <div class="quote-block" id="s2-problem-text" style="font-weight: bold;">
-                        </div>
-                    
-                    <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 20px;" id="s2-options-container">
-                        </div>
-                    
-                    <div class="feedback" id="s2Feedback"></div>
-                    <button class="btn try-another-btn" id="s2NextBtn" onclick="loadS2()">Try Another Similar Problem</button>
+            <div class="column do-it-col" id="s1-right">
+                <div class="col-header">
+                    <span class="section-title">⚡️ Do It!</span>
+                    <button class="caret-btn" onclick="toggleCol('s1-right', 's1-left')">▼</button>
                 </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Step 4 (Original Lesson 3) -->
-    <div class="step" id="step4">
-        <div class="column learn-col" id="s3-left">
-            <div class="col-header">
-                <span class="section-title">🚀 Learn It!</span>
-                <button class="caret-btn" onclick="toggleCol('s3-left', 's3-right')">▼</button>
-            </div>
-            <div class="col-content">
-                <h2>Types of Fractions & Rules</h2>
-                <p><strong>Proper fractions</strong> are those that fall between 0 and 1. In proper fractions, the numerator is always smaller than the denominator. For example: <span class="fraction-expr"><span class="fraction"><span class="numerator">1</span><span class="denominator">4</span></span></span>, <span class="fraction-expr"><span class="fraction"><span class="numerator">1</span><span class="denominator">2</span></span></span>, <span class="fraction-expr"><span class="fraction"><span class="numerator">2</span><span class="denominator">3</span></span></span>.</p>
-                <p><strong>Improper fractions</strong> are greater than or equal to 1. In improper fractions, the numerator is always greater than or equal to the denominator. For example: <span class="fraction-expr"><span class="fraction"><span class="numerator">5</span><span class="denominator">4</span></span></span>, <span class="fraction-expr"><span class="fraction"><span class="numerator">13</span><span class="denominator">2</span></span></span>, <span class="fraction-expr"><span class="fraction"><span class="numerator">11</span><span class="denominator">3</span></span></span>.</p>
-                <p>An improper fraction can be rewritten as a mixed number (an integer and a proper fraction together). For example: <span class="fraction-expr"><span class="fraction"><span class="numerator">5</span><span class="denominator">4</span></span></span> = <span class="fraction-expr"><span class="fraction"><span class="numerator">4</span><span class="denominator">4</span></span></span> + <span class="fraction-expr"><span class="fraction"><span class="numerator">1</span><span class="denominator">4</span></span></span> = 1 <span class="fraction-expr"><span class="fraction"><span class="numerator">1</span><span class="denominator">4</span></span></span>.</p>
-                
-                <hr style="border: 0; border-top: 1px solid var(--border); margin: 20px 0;">
-
-                <h3>Numerator and Denominator Rules</h3>
-                <p>In fractions, certain key rules govern the relationship between the numerator (the top number) and the denominator (the bottom number) of proper fractions. The following rules apply only to positive numbers:</p>
-                <ul>
-                    <li>If you <strong>increase the numerator</strong> of a fraction, while holding the denominator constant, the value increases: <span class="fraction-expr"><span class="fraction"><span class="numerator">1</span><span class="denominator">8</span></span></span> &lt; <span class="fraction-expr"><span class="fraction"><span class="numerator">2</span><span class="denominator">8</span></span></span> &lt; <span class="fraction-expr"><span class="fraction"><span class="numerator">3</span><span class="denominator">8</span></span></span>... Increasing only the numerator is like eating more slices of the same pizza.</li>
-                    <li>If you <strong>increase the denominator</strong> of a fraction, while holding the numerator constant, the value gets smaller and smaller as it approaches 0: <span class="fraction-expr"><span class="fraction"><span class="numerator">1</span><span class="denominator">2</span></span></span> &gt; <span class="fraction-expr"><span class="fraction"><span class="numerator">1</span><span class="denominator">3</span></span></span> &gt; <span class="fraction-expr"><span class="fraction"><span class="numerator">1</span><span class="denominator">4</span></span></span>... Imagine that you have one slice of a whole pizza and, magically, the rest of the pizza (but not your slice!) keeps getting bigger and bigger.</li>
-                </ul>
-                <p><em>Pop quiz:</em> Is <span class="fraction-expr"><span class="fraction"><span class="numerator">7</span><span class="denominator">13</span></span></span> a little greater or a little less than <span class="fraction-expr"><span class="fraction"><span class="numerator">7</span><span class="denominator">14</span></span></span> or 0.5? The denominator gets a little smaller in this example, not larger. When you decrease the denominator, the value of the fraction increases a little. Therefore, <span class="fraction-expr"><span class="fraction"><span class="numerator">7</span><span class="denominator">13</span></span></span> is a little greater than 0.5.</p>
-            </div>
-        </div>
-
-        <div class="column do-it-col" id="s3-right">
-            <div class="col-header">
-                <span class="section-title">⚡️ Do It!</span>
-                <button class="caret-btn" onclick="toggleCol('s3-right', 's3-left')">▼</button>
-            </div>
-            <div class="col-content">
-                <div class="interactive-panel">
-                    <h3>🔮 The Fraction Predictor</h3>
-                    <p>Given the rule you just learned, determine what happens to the value of the fraction below if you change it as described.</p>
-                    <div style="display: flex; justify-content: space-between; font-size: 0.9rem; color: #666;">
-                        <span class="attempt-remain">Attempts remaining: <span id="s3-attempts">5</span></span>
-                    </div>
-
-                    <div class="quote-block" id="s3-problem-text">
-                        </div>
-                    
-                    <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 20px;" id="s3-options-container">
-                        <div class="option-card" onclick="checkS3('increases', this)">📈 The value <strong>increases</strong></div>
-                        <div class="option-card" onclick="checkS3('decreases', this)">📉 The value <strong>decreases</strong></div>
-                    </div>
-                    
-                    <div class="feedback" id="s3Feedback"></div>
-                    <button class="btn try-another-btn" id="s3NextBtn" onclick="loadS3()">Try Another Similar Problem</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Step 5 (Original Lesson 4) -->
-    <div class="step" id="step5">
-        <div class="column learn-col" id="s4-left">
-            <div class="col-header">
-                <span class="section-title">🚀 Learn It!</span>
-                <button class="caret-btn" onclick="toggleCol('s4-left', 's4-right')">▼</button>
-            </div>
-            <div class="col-content">
-                <h2>The "Adding to Both" Rule</h2>
-                <p>Consider this lesser-known rule that the GMAT likes to employ (still for positive numbers only): adding the exact same number to both the numerator and the denominator brings the fraction <strong>closer to 1</strong>, regardless of the fraction's value.</p>
-                <p>If the starting fraction is less than 1, the fraction gets closer to 1 (it increases) as you add the same number to the top and bottom. For example: <span class="fraction-expr"><span class="fraction"><span class="numerator">1</span><span class="denominator">2</span></span></span> &lt; <span class="fraction-expr"><span class="fraction"><span class="numerator">2</span><span class="denominator">3</span></span></span> &lt; <span class="fraction-expr"><span class="fraction"><span class="numerator">11</span><span class="denominator">12</span></span></span> &lt; ... &rarr; 1.</p>
-                <p>And if the starting fraction is greater than 1, the fraction gets closer to 1 (it decreases) as you add the same number to the top and bottom. For example: <span class="fraction-expr"><span class="fraction"><span class="numerator">3</span><span class="denominator">2</span></span></span> &gt; <span class="fraction-expr"><span class="fraction"><span class="numerator">4</span><span class="denominator">3</span></span></span> &gt; <span class="fraction-expr"><span class="fraction"><span class="numerator">13</span><span class="denominator">12</span></span></span> &gt; ... &rarr; 1.</p>
-            </div>
-        </div>
-
-        <div class="column do-it-col" id="s4-right">
-            <div class="col-header">
-                <span class="section-title">⚡️ Do It!</span>
-                <button class="caret-btn" onclick="toggleCol('s4-right', 's4-left')">▼</button>
-            </div>
-            <div class="col-content">
-                <div class="interactive-panel">
-                    <h3>🧲 The Convergence Simulator</h3>
-                    <p>See the "Adding to Both" rule in action. Use the bold interactive slider below to add the exact same positive value to both the numerator and denominator of a proper and an improper fraction.</p>
-                    
-                    <div class="slider-container">
-                        <div class="slider-label"><span class="interactive-label" style="margin-bottom:0;">Value to Add: <span id="addValue" class="dynamic-text" style="font-size: 1rem;">0</span></span></div>
-                        <input type="range" style="width: 100%; cursor: pointer;" min="0" max="50" value="0" oninput="updateFractions(this.value)">
-                    </div>
-                <div class="table-scroll">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Type</th>
-                                <th>Original</th>
-                                <th>New Fraction (+<span id="tblAddVal" class="dynamic-text">0</span>)</th>
-                                <th>Decimal Value</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><strong>Proper Fraction</strong><br>(Starts &lt; 1)</td>
-                                <td><span class="fraction-expr"><span class="fraction"><span class="numerator">1</span><span class="denominator">2</span></span></span> (0.500)</td>
-                                <td><span class="fraction-expr dynamic-frac"><span class="fraction"><span class="numerator dynamic-text" id="propNum">1</span><span class="denominator dynamic-text" id="propDen">2</span></span></span></td>
-                                <td><span id="propDec" class="dynamic-text">0.500</span></td>
-                            </tr>
-                            <tr>
-                                <td><strong>Improper Fraction</strong><br>(Starts &gt; 1)</td>
-                                <td><span class="fraction-expr"><span class="fraction"><span class="numerator">3</span><span class="denominator">2</span></span></span> (1.500)</td>
-                                <td><span class="fraction-expr dynamic-frac"><span class="fraction"><span class="numerator dynamic-text" id="impNum">3</span><span class="denominator dynamic-text" id="impDen">2</span></span></span></td>
-                                <td><span id="impDec" class="dynamic-text">1.500</span></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                    <div class="feedback success" style="margin-top:20px; display: block;">
-                        <strong>Observation:</strong> Notice how the proper fraction <em>increases</em> toward 1.0, while the improper fraction <em>decreases</em> toward 1.0! Both converge on 1 as you add larger identical values to the top and bottom.
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Step 6 (Original Lesson 5) -->
-    <div class="step" id="step6">
-        <div class="column learn-col" id="s5-left">
-            <div class="col-header">
-                <span class="section-title">🚀 Learn It!</span>
-                <button class="caret-btn" onclick="toggleCol('s5-left', 's5-right')">▼</button>
-            </div>
-            <div class="col-content">
-                <h2>Simplifying & Multiplying Fractions</h2>
-                <h3>Simplifying Fractions and Ratios</h3>
-                <p>Simplifying a fraction is a way to express a fraction or ratio in its lowest terms. Answers in fraction or ratio form on the GMAT will always be presented in fully simplified terms.</p>
-                <p>If you multiply or divide both the numerator and the denominator by the same number, you don't actually change the value of the fraction because you're multiplying or dividing by 1. For example, <span class="fraction-expr"><span class="fraction"><span class="numerator">24</span><span class="denominator">30</span></span></span> can be simplified to <span class="fraction-expr"><span class="fraction"><span class="numerator">4</span><span class="denominator">5</span></span></span> by dividing the top and bottom by 6. A ratio of 4:12:16 simplifies to 1:3:4 by dividing all parts by 4.</p>
-                <p>You can simplify (or reduce) a fraction or ratio by dividing both the numerator and the denominator by any common factors until no common factors remain.</p>
-                
-                <hr style="border: 0; border-top: 1px solid var(--border); margin: 20px 0;">
-                
-                <h3>Simplify Before You Multiply</h3>
-                <p>When multiplying fractions, you could first multiply the numerators together, then multiply the denominators together, and finally simplify the resulting product. For example:</p>
-                <p style="text-align:center; font-size: 1.1rem;"><span class="fraction-expr"><span class="fraction"><span class="numerator">8</span><span class="denominator">15</span></span></span> &times; <span class="fraction-expr"><span class="fraction"><span class="numerator">35</span><span class="denominator">72</span></span></span> = <span class="fraction-expr"><span class="fraction"><span class="numerator">280</span><span class="denominator">...</span></span></span></p>
-                <p>Wait! Stop! Don't even do that first step. If the math is that annoying, pause and think about what else you could do. In general, <strong>always try to simplify before you multiply</strong>: Cancel common factors from the top and bottom of the fractions.</p>
-                <p>It doesn't matter that the numbers appear in two different fractions. When multiplying fractions together, you can treat all of the numerators as one group and all of the denominators as another. You can cancel anything in the top group with anything in the bottom. Make your life easier: Always simplify before you multiply!</p>
-            </div>
-        </div>
-
-        <div class="column do-it-col" id="s5-right">
-            <div class="col-header">
-                <span class="section-title">⚡️ Do It!</span>
-                <button class="caret-btn" onclick="toggleCol('s5-right', 's5-left')">▼</button>
-            </div>
-            <div class="col-content">
-                <div class="interactive-panel">
-                    <h3>✂️ Interactive Cancellation Sandbox</h3>
-                    
-                    <div class="math-block">
-                        <div class="fraction">
-                            <div class="numerator clickable" id="num1" data-val="8">
-                                <span class="number-item current-val">8</span>
-                            </div>
-                            <div class="denominator clickable" id="den1" data-val="15">
-                                <span class="number-item current-val">15</span>
-                            </div>
-                        </div>
-                        <div class="operator">×</div>
-                        <div class="fraction">
-                            <div class="numerator clickable" id="num2" data-val="35">
-                                <span class="number-item current-val">35</span>
-                            </div>
-                            <div class="denominator clickable" id="den2" data-val="72">
-                                <span class="number-item current-val">72</span>
-                            </div>
-                        </div>
-                        <div class="operator hidden" id="equals">=</div>
-                        <div class="fraction hidden" id="result-frac">
-                            <div class="numerator">
-                                <span class="number-item final-answer" id="res-num">7</span>
-                            </div>
-                            <div class="denominator">
-                                <span class="number-item final-answer" id="res-den">27</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="panel-box" id="instruction-panel">
-                        <span id="main-msg">Click a number in the <strong>numerator</strong> and a number in the <strong>denominator</strong> that share a common factor to cancel them.</span>
-                    </div>
-
-                    <div class="panel-box hidden" id="factor-prompt">
-                        <div id="input-section">
-                            <span>You selected <strong><span id="selected-pair"></span></strong>. What factor do they share?</span>
-                            <div class="input-group">
-                                <input type="number" id="factor-input" class="interactive-input" placeholder="?">
-                                <button id="factor-submit" class="btn">Apply</button>
-                            </div>
-                            <div id="error-msg" class="error-msg hidden">That's not a valid common factor. Try again!</div>
+                <div class="col-content">
+                    <div class="interactive-panel">
+                        <h3>🧩 The Fraction/Ratio Converter</h3>
+                        <p>Read the given ratio statement carefully. Based on the rules for creating the "ratio total,"
+                            write the correct corresponding fraction in the bold input boxes below.</p>
+                        <div style="display: flex; justify-content: space-between; font-size: 0.9rem; color: #666;">
+                            <span class="attempt-remain">Attempts remaining: <span id="s1-attempts">5</span></span>
                         </div>
 
-                        <div id="warning-section" class="hidden">
-                            <span id="warning-text"></span>
-                            <div class="input-group" style="margin-top: 15px;">
-                                <button id="btn-try-again" class="btn btn-secondary">Try Again</button>
-                                <button id="btn-continue" class="btn">Continue</button>
-                            </div>
+                        <div class="quote-block" id="s1-problem-text" style="font-weight: bold;">
                         </div>
-                    </div>
 
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Step 7 (Original Lesson 6) -->
-    <div class="step" id="step7">
-        <div class="column learn-col" id="s6-left">
-            <div class="col-header">
-                <span class="section-title">🚀 Learn It!</span>
-                <button class="caret-btn" onclick="toggleCol('s6-left', 's6-right')">▼</button>
-            </div>
-            <div class="col-content">
-                <h2>Add, Subtract, Divide & Double-Decker Fractions</h2>
-                <h3>Add and Subtract Fractions: Use a Common Denominator</h3>
-                <p>If you're asked to add or subtract fractions, first consider whether it would be better to convert to percents or decimals instead. If you do decide to add or subtract in fraction form, follow these steps:</p>
-                <ol>
-                    <li>Find a common denominator.</li>
-                    <li>Rewrite each fraction so that it is expressed using this common denominator.</li>
-                    <li>Add up the numerators only.</li>
-                </ol>
-                <p>Why don't you also add up the denominators? Think back to the pizza. If you ate 5 of the 8 slices (<span class="fraction-expr"><span class="fraction"><span class="numerator">5</span><span class="denominator">8</span></span></span>) and Sam ate 3 of the 8 slices (<span class="fraction-expr"><span class="fraction"><span class="numerator">3</span><span class="denominator">8</span></span></span>), together you ate <span class="fraction-expr"><span class="fraction"><span class="numerator">8</span><span class="denominator">8</span></span></span> of the pizza—the whole thing!—not <span class="fraction-expr"><span class="fraction"><span class="numerator">8</span><span class="denominator">16</span></span></span> or half the pizza.</p>
-                
-                <hr style="border: 0; border-top: 1px solid var(--border); margin: 20px 0;">
-
-                <h3>Dividing Fractions: Use the Reciprocal</h3>
-                <p>If you're asked to divide by a fraction (for example, divide by <span class="fraction-expr"><span class="fraction"><span class="numerator">3</span><span class="denominator">4</span></span></span>), instead multiply by the reciprocal. The reciprocal of a fraction is the flip of that fraction. The reciprocal of <span class="fraction-expr"><span class="fraction"><span class="numerator">3</span><span class="denominator">4</span></span></span> is <span class="fraction-expr"><span class="fraction"><span class="numerator">4</span><span class="denominator">3</span></span></span>. What is the reciprocal of an integer? Think of an integer as a fraction with a denominator of 1. The reciprocal of 5 (or <span class="fraction-expr"><span class="fraction"><span class="numerator">5</span><span class="denominator">1</span></span></span>) is <span class="fraction-expr"><span class="fraction"><span class="numerator">1</span><span class="denominator">5</span></span></span>.</p>
-                <p>In order to divide by a fraction, follow these steps:</p>
-                <ol>
-                    <li>Change the divisor (the second number) into its reciprocal.</li>
-                    <li>Multiply the fractions (and simplify before you multiply!).</li>
-                </ol>
-                <hr style="border: 0; border-top: 1px solid var(--border); margin: 20px 0;">
-
-                <h3>Split Up Double-Decker Fractions</h3>
-                <p>The division of fractions can be shown by putting the fractions themselves into a double-decker fraction. You can rewrite this as the top fraction divided by the bottom fraction. Then, solve normally by using the reciprocal of the second fraction and then multiplying.</p>
-                <p>In addition, you can often simplify more quickly by multiplying both top and bottom by a common denominator of the "fractions within the fraction".</p>
-            </div>
-        </div>
-
-        <div class="column do-it-col" id="s6-right">
-            <div class="col-header">
-                <span class="section-title">⚡️ Do It!</span>
-                <button class="caret-btn" onclick="toggleCol('s6-right', 's6-left')">▼</button>
-            </div>
-            <div class="col-content">
-                <div class="interactive-panel">
-                    <h3>🥞 Double-Decker Demolition</h3>
-                    <p>Convert the double-decker fraction into a standard multiplication expression using the reciprocal rule, then cancel common factors to find the final simplified answer.</p>
-                    <div style="display: flex; justify-content: space-between; font-size: 0.9rem; color: #666;">
-                        <span class="attempt-remain">Attempts remaining: <span id="s6-attempts">5</span></span>
-                    </div>
-
-                    <div class="quote-block" id="s6-problem-text" style="text-align:center; background-color: #f8fafc; border-color: #94a3b8;">
-                        </div>
-                    
-                    <div style="margin: 20px 0;">
-                        <span class="interactive-label">Step 1: Multiply by the reciprocal of the denominator.</span>
-                        <div style="display: flex; align-items: center; justify-content: center; gap: 15px; background: #fff; padding: 15px; border-radius: 8px; border: 2px dashed #cbd5e1;">
-                            <span id="s6-top-frac" style="font-size: 1.3rem;"></span>
-                            <span style="font-size: 1.5rem; font-weight:bold; color: var(--primary);">&times;</span>
+                        <div
+                            style="display: flex; align-items: center; justify-content: center; gap: 15px; margin: 20px 0; background: #fff; padding: 20px; border-radius: 8px; border: 2px dashed #cbd5e1;">
+                            <span class="interactive-label" style="margin-bottom:0;" id="s1-question-subject"></span>
                             <div style="display: flex; flex-direction: column; align-items: center; gap: 5px;">
-                                <input type="number" id="s6-recN" class="interactive-input" placeholder="Num">
+                                <input type="number" id="s1-num" class="interactive-input" placeholder="Num">
                                 <div style="width: 100%; height: 3px; background-color: var(--primary);"></div>
-                                <input type="number" id="s6-recD" class="interactive-input" placeholder="Den">
+                                <input type="number" id="s1-den" class="interactive-input" placeholder="Den">
                             </div>
                         </div>
-                        <button class="btn" style="width: 100%; margin-top: 10px;" id="checkS6Step1Btn" onclick="checkS6Step1()">Check Step 1 Reciprocal</button>
+
+                        <button class="btn" style="width: 100%;" id="checkS1Btn" onclick="checkS1()">Check
+                            Fraction</button>
+
+                        <div class="feedback" id="s1Feedback"></div>
+                        <button class="btn try-another-btn" id="s1NextBtn" onclick="loadS1()">Try Another Similar
+                            Problem</button>
                     </div>
-                    
-                    <div id="s6-step2-container" class="hidden" style="margin: 20px 0; padding-top: 15px; border-top: 1px dashed var(--border);">
-                        <span class="interactive-label">Step 2: Cancel common factors & solve for final product.</span>
-                        
-                        <div class="math-block" id="s6-math-block">
+                </div>
+            </div>
+        </div>
+
+        <!-- Step 3 (Original Lesson 2) -->
+        <div class="step" id="step3">
+            <div class="column learn-col" id="s2-left">
+                <div class="col-header">
+                    <span class="section-title">🚀 Learn It!</span>
+                    <button class="caret-btn" onclick="toggleCol('s2-left', 's2-right')">▼</button>
+                </div>
+                <div class="col-content">
+                    <h2>Ratio Labels & Formats</h2>
+                    <p>Ratios can be written in three different ways: <strong>1 to 3</strong>; <strong>1:3</strong>;
+                        <span class="fraction-expr"><span class="fraction"><span class="numerator">1</span><span
+                                    class="denominator">3</span></span></span>. In the third case, you'll need to learn
+                        how to read the sentence to know whether it's talking about a fraction or a ratio.</p>
+                    <p>Fractions will always have two portions (with the part on top and the whole on the bottom), but
+                        ratios can have two or more portions. For example, you could have 2 horses to 3 rabbits to 7
+                        llamas, or a ratio of 2:3:7.</p>
+                    <p>Finally, fractions and ratios both express a relationship between two (or more) items, but by
+                        themselves they do not tell you the exact quantities in question. Knowing that the ratio of dogs
+                        to cats is 2 to 3 does not indicate the actual number of dogs and cats. There could be 2 dogs
+                        and 3 cats, or 6 dogs and 9 cats.</p>
+
+                    <hr style="border: 0; border-top: 1px solid var(--border); margin: 20px 0;">
+
+                    <h3>Ratio Labels</h3>
+                    <p>It's vital to jot down the order in which the ratio information is given. After all, "the ratio
+                        of dogs to cats is 2:3" is very different from "the ratio of dogs to cats is 3:2."</p>
+                    <p>It is very easy to accidentally reverse the order of a ratio—especially on a timed test like the
+                        GMAT. In order to avoid these reversals, write units on either the ratio itself or on the
+                        variables you create, or on both.</p>
+                </div>
+            </div>
+
+            <div class="column do-it-col" id="s2-right">
+                <div class="col-header">
+                    <span class="section-title">⚡️ Do It!</span>
+                    <button class="caret-btn" onclick="toggleCol('s2-right', 's2-left')">▼</button>
+                </div>
+                <div class="col-content">
+                    <div class="interactive-panel">
+                        <h3>⚠️ The Ratio Reversal Trap</h3>
+                        <p>Read the statement below. Pay extremely close attention to the requested order to avoid
+                            falling into a classic trap.</p>
+                        <div style="display: flex; justify-content: space-between; color: #666;">
+                            <span class="attempt-remain">Attempts remaining: <span id="s2-attempts">5</span></span>
+                        </div>
+
+                        <div class="quote-block" id="s2-problem-text" style="font-weight: bold;">
+                        </div>
+
+                        <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 20px;"
+                            id="s2-options-container">
+                        </div>
+
+                        <div class="feedback" id="s2Feedback"></div>
+                        <button class="btn try-another-btn" id="s2NextBtn" onclick="loadS2()">Try Another Similar
+                            Problem</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Step 4 (Original Lesson 3) -->
+        <div class="step" id="step4">
+            <div class="column learn-col" id="s3-left">
+                <div class="col-header">
+                    <span class="section-title">🚀 Learn It!</span>
+                    <button class="caret-btn" onclick="toggleCol('s3-left', 's3-right')">▼</button>
+                </div>
+                <div class="col-content">
+                    <h2>Types of Fractions & Rules</h2>
+                    <p><strong>Proper fractions</strong> are those that fall between 0 and 1. In proper fractions, the
+                        numerator is always smaller than the denominator. For example: <span class="fraction-expr"><span
+                                class="fraction"><span class="numerator">1</span><span
+                                    class="denominator">4</span></span></span>, <span class="fraction-expr"><span
+                                class="fraction"><span class="numerator">1</span><span
+                                    class="denominator">2</span></span></span>, <span class="fraction-expr"><span
+                                class="fraction"><span class="numerator">2</span><span
+                                    class="denominator">3</span></span></span>.</p>
+                    <p><strong>Improper fractions</strong> are greater than or equal to 1. In improper fractions, the
+                        numerator is always greater than or equal to the denominator. For example: <span
+                            class="fraction-expr"><span class="fraction"><span class="numerator">5</span><span
+                                    class="denominator">4</span></span></span>, <span class="fraction-expr"><span
+                                class="fraction"><span class="numerator">13</span><span
+                                    class="denominator">2</span></span></span>, <span class="fraction-expr"><span
+                                class="fraction"><span class="numerator">11</span><span
+                                    class="denominator">3</span></span></span>.</p>
+                    <p>An improper fraction can be rewritten as a mixed number (an integer and a proper fraction
+                        together). For example: <span class="fraction-expr"><span class="fraction"><span
+                                    class="numerator">5</span><span class="denominator">4</span></span></span> = <span
+                            class="fraction-expr"><span class="fraction"><span class="numerator">4</span><span
+                                    class="denominator">4</span></span></span> + <span class="fraction-expr"><span
+                                class="fraction"><span class="numerator">1</span><span
+                                    class="denominator">4</span></span></span> = 1 <span class="fraction-expr"><span
+                                class="fraction"><span class="numerator">1</span><span
+                                    class="denominator">4</span></span></span>.</p>
+
+                    <hr style="border: 0; border-top: 1px solid var(--border); margin: 20px 0;">
+
+                    <h3>Numerator and Denominator Rules</h3>
+                    <p>In fractions, certain key rules govern the relationship between the numerator (the top number)
+                        and the denominator (the bottom number) of proper fractions. The following rules apply only to
+                        positive numbers:</p>
+                    <ul>
+                        <li>If you <strong>increase the numerator</strong> of a fraction, while holding the denominator
+                            constant, the value increases: <span class="fraction-expr"><span class="fraction"><span
+                                        class="numerator">1</span><span class="denominator">8</span></span></span> &lt;
+                            <span class="fraction-expr"><span class="fraction"><span class="numerator">2</span><span
+                                        class="denominator">8</span></span></span> &lt; <span
+                                class="fraction-expr"><span class="fraction"><span class="numerator">3</span><span
+                                        class="denominator">8</span></span></span>... Increasing only the numerator is
+                            like eating more slices of the same pizza.</li>
+                        <li>If you <strong>increase the denominator</strong> of a fraction, while holding the numerator
+                            constant, the value gets smaller and smaller as it approaches 0: <span
+                                class="fraction-expr"><span class="fraction"><span class="numerator">1</span><span
+                                        class="denominator">2</span></span></span> &gt; <span
+                                class="fraction-expr"><span class="fraction"><span class="numerator">1</span><span
+                                        class="denominator">3</span></span></span> &gt; <span
+                                class="fraction-expr"><span class="fraction"><span class="numerator">1</span><span
+                                        class="denominator">4</span></span></span>... Imagine that you have one slice of
+                            a whole pizza and, magically, the rest of the pizza (but not your slice!) keeps getting
+                            bigger and bigger.</li>
+                    </ul>
+                    <p><em>Pop quiz:</em> Is <span class="fraction-expr"><span class="fraction"><span
+                                    class="numerator">7</span><span class="denominator">13</span></span></span> a little
+                        greater or a little less than <span class="fraction-expr"><span class="fraction"><span
+                                    class="numerator">7</span><span class="denominator">14</span></span></span> or 0.5?
+                        The denominator gets a little smaller in this example, not larger. When you decrease the
+                        denominator, the value of the fraction increases a little. Therefore, <span
+                            class="fraction-expr"><span class="fraction"><span class="numerator">7</span><span
+                                    class="denominator">13</span></span></span> is a little greater than 0.5.</p>
+                </div>
+            </div>
+
+            <div class="column do-it-col" id="s3-right">
+                <div class="col-header">
+                    <span class="section-title">⚡️ Do It!</span>
+                    <button class="caret-btn" onclick="toggleCol('s3-right', 's3-left')">▼</button>
+                </div>
+                <div class="col-content">
+                    <div class="interactive-panel">
+                        <h3>🔮 The Fraction Predictor</h3>
+                        <p>Given the rule you just learned, determine what happens to the value of the fraction below if
+                            you change it as described.</p>
+                        <div style="display: flex; justify-content: space-between; font-size: 0.9rem; color: #666;">
+                            <span class="attempt-remain">Attempts remaining: <span id="s3-attempts">5</span></span>
+                        </div>
+
+                        <div class="quote-block" id="s3-problem-text">
+                        </div>
+
+                        <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 20px;"
+                            id="s3-options-container">
+                            <div class="option-card" onclick="checkS3('increases', this)">📈 The value
+                                <strong>increases</strong></div>
+                            <div class="option-card" onclick="checkS3('decreases', this)">📉 The value
+                                <strong>decreases</strong></div>
+                        </div>
+
+                        <div class="feedback" id="s3Feedback"></div>
+                        <button class="btn try-another-btn" id="s3NextBtn" onclick="loadS3()">Try Another Similar
+                            Problem</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Step 5 (Original Lesson 4) -->
+        <div class="step" id="step5">
+            <div class="column learn-col" id="s4-left">
+                <div class="col-header">
+                    <span class="section-title">🚀 Learn It!</span>
+                    <button class="caret-btn" onclick="toggleCol('s4-left', 's4-right')">▼</button>
+                </div>
+                <div class="col-content">
+                    <h2>The "Adding to Both" Rule</h2>
+                    <p>Consider this lesser-known rule that the GMAT likes to employ (still for positive numbers only):
+                        adding the exact same number to both the numerator and the denominator brings the fraction
+                        <strong>closer to 1</strong>, regardless of the fraction's value.</p>
+                    <p>If the starting fraction is less than 1, the fraction gets closer to 1 (it increases) as you add
+                        the same number to the top and bottom. For example: <span class="fraction-expr"><span
+                                class="fraction"><span class="numerator">1</span><span
+                                    class="denominator">2</span></span></span> &lt; <span class="fraction-expr"><span
+                                class="fraction"><span class="numerator">2</span><span
+                                    class="denominator">3</span></span></span> &lt; <span class="fraction-expr"><span
+                                class="fraction"><span class="numerator">11</span><span
+                                    class="denominator">12</span></span></span> &lt; ... &rarr; 1.</p>
+                    <p>And if the starting fraction is greater than 1, the fraction gets closer to 1 (it decreases) as
+                        you add the same number to the top and bottom. For example: <span class="fraction-expr"><span
+                                class="fraction"><span class="numerator">3</span><span
+                                    class="denominator">2</span></span></span> &gt; <span class="fraction-expr"><span
+                                class="fraction"><span class="numerator">4</span><span
+                                    class="denominator">3</span></span></span> &gt; <span class="fraction-expr"><span
+                                class="fraction"><span class="numerator">13</span><span
+                                    class="denominator">12</span></span></span> &gt; ... &rarr; 1.</p>
+                </div>
+            </div>
+
+            <div class="column do-it-col" id="s4-right">
+                <div class="col-header">
+                    <span class="section-title">⚡️ Do It!</span>
+                    <button class="caret-btn" onclick="toggleCol('s4-right', 's4-left')">▼</button>
+                </div>
+                <div class="col-content">
+                    <div class="interactive-panel">
+                        <h3>🧲 The Convergence Simulator</h3>
+                        <p>See the "Adding to Both" rule in action. Use the bold interactive slider below to add the
+                            exact same positive value to both the numerator and denominator of a proper and an improper
+                            fraction.</p>
+
+                        <div class="slider-container">
+                            <div class="slider-label"><span class="interactive-label" style="margin-bottom:0;">Value to
+                                    Add: <span id="addValue" class="dynamic-text"
+                                        style="font-size: 1rem;">0</span></span></div>
+                            <input type="range" style="width: 100%; cursor: pointer;" min="0" max="50" value="0"
+                                oninput="updateFractions(this.value)">
+                        </div>
+                        <div class="table-scroll">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Type</th>
+                                        <th>Original</th>
+                                        <th>New Fraction (+<span id="tblAddVal" class="dynamic-text">0</span>)</th>
+                                        <th>Decimal Value</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>Proper Fraction</strong><br>(Starts &lt; 1)</td>
+                                        <td><span class="fraction-expr"><span class="fraction"><span
+                                                        class="numerator">1</span><span
+                                                        class="denominator">2</span></span></span> (0.500)</td>
+                                        <td><span class="fraction-expr dynamic-frac"><span class="fraction"><span
+                                                        class="numerator dynamic-text" id="propNum">1</span><span
+                                                        class="denominator dynamic-text"
+                                                        id="propDen">2</span></span></span></td>
+                                        <td><span id="propDec" class="dynamic-text">0.500</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Improper Fraction</strong><br>(Starts &gt; 1)</td>
+                                        <td><span class="fraction-expr"><span class="fraction"><span
+                                                        class="numerator">3</span><span
+                                                        class="denominator">2</span></span></span> (1.500)</td>
+                                        <td><span class="fraction-expr dynamic-frac"><span class="fraction"><span
+                                                        class="numerator dynamic-text" id="impNum">3</span><span
+                                                        class="denominator dynamic-text"
+                                                        id="impDen">2</span></span></span></td>
+                                        <td><span id="impDec" class="dynamic-text">1.500</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="feedback success" style="margin-top:20px; display: block;">
+                            <strong>Observation:</strong> Notice how the proper fraction <em>increases</em> toward 1.0,
+                            while the improper fraction <em>decreases</em> toward 1.0! Both converge on 1 as you add
+                            larger identical values to the top and bottom.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Step 6 (Original Lesson 5) -->
+        <div class="step" id="step6">
+            <div class="column learn-col" id="s5-left">
+                <div class="col-header">
+                    <span class="section-title">🚀 Learn It!</span>
+                    <button class="caret-btn" onclick="toggleCol('s5-left', 's5-right')">▼</button>
+                </div>
+                <div class="col-content">
+                    <h2>Simplifying & Multiplying Fractions</h2>
+                    <h3>Simplifying Fractions and Ratios</h3>
+                    <p>Simplifying a fraction is a way to express a fraction or ratio in its lowest terms. Answers in
+                        fraction or ratio form on the GMAT will always be presented in fully simplified terms.</p>
+                    <p>If you multiply or divide both the numerator and the denominator by the same number, you don't
+                        actually change the value of the fraction because you're multiplying or dividing by 1. For
+                        example, <span class="fraction-expr"><span class="fraction"><span
+                                    class="numerator">24</span><span class="denominator">30</span></span></span> can be
+                        simplified to <span class="fraction-expr"><span class="fraction"><span
+                                    class="numerator">4</span><span class="denominator">5</span></span></span> by
+                        dividing the top and bottom by 6. A ratio of 4:12:16 simplifies to 1:3:4 by dividing all parts
+                        by 4.</p>
+                    <p>You can simplify (or reduce) a fraction or ratio by dividing both the numerator and the
+                        denominator by any common factors until no common factors remain.</p>
+
+                    <hr style="border: 0; border-top: 1px solid var(--border); margin: 20px 0;">
+
+                    <h3>Simplify Before You Multiply</h3>
+                    <p>When multiplying fractions, you could first multiply the numerators together, then multiply the
+                        denominators together, and finally simplify the resulting product. For example:</p>
+                    <p style="text-align:center; font-size: 1.1rem;"><span class="fraction-expr"><span
+                                class="fraction"><span class="numerator">8</span><span
+                                    class="denominator">15</span></span></span> &times; <span
+                            class="fraction-expr"><span class="fraction"><span class="numerator">35</span><span
+                                    class="denominator">72</span></span></span> = <span class="fraction-expr"><span
+                                class="fraction"><span class="numerator">280</span><span
+                                    class="denominator">...</span></span></span></p>
+                    <p>Wait! Stop! Don't even do that first step. If the math is that annoying, pause and think about
+                        what else you could do. In general, <strong>always try to simplify before you multiply</strong>:
+                        Cancel common factors from the top and bottom of the fractions.</p>
+                    <p>It doesn't matter that the numbers appear in two different fractions. When multiplying fractions
+                        together, you can treat all of the numerators as one group and all of the denominators as
+                        another. You can cancel anything in the top group with anything in the bottom. Make your life
+                        easier: Always simplify before you multiply!</p>
+                </div>
+            </div>
+
+            <div class="column do-it-col" id="s5-right">
+                <div class="col-header">
+                    <span class="section-title">⚡️ Do It!</span>
+                    <button class="caret-btn" onclick="toggleCol('s5-right', 's5-left')">▼</button>
+                </div>
+                <div class="col-content">
+                    <div class="interactive-panel">
+                        <h3>✂️ Interactive Cancellation Sandbox</h3>
+
+                        <div class="math-block">
                             <div class="fraction">
-                                <div class="numerator clickable" id="s6-num1" data-val="">
-                                    <span class="number-item current-val"></span>
+                                <div class="numerator clickable" id="num1" data-val="8">
+                                    <span class="number-item current-val">8</span>
                                 </div>
-                                <div class="denominator clickable" id="s6-den1" data-val="">
-                                    <span class="number-item current-val"></span>
+                                <div class="denominator clickable" id="den1" data-val="15">
+                                    <span class="number-item current-val">15</span>
                                 </div>
                             </div>
-                            <div class="operator">&times;</div>
+                            <div class="operator">×</div>
                             <div class="fraction">
-                                <div class="numerator clickable" id="s6-num2" data-val="">
-                                    <span class="number-item current-val"></span>
+                                <div class="numerator clickable" id="num2" data-val="35">
+                                    <span class="number-item current-val">35</span>
                                 </div>
-                                <div class="denominator clickable" id="s6-den2" data-val="">
-                                    <span class="number-item current-val"></span>
+                                <div class="denominator clickable" id="den2" data-val="72">
+                                    <span class="number-item current-val">72</span>
                                 </div>
                             </div>
-                            <div class="operator hidden" id="s6-equals">=</div>
-                            <div class="fraction hidden" id="s6-result-frac">
+                            <div class="operator hidden" id="equals">=</div>
+                            <div class="fraction hidden" id="result-frac">
                                 <div class="numerator">
-                                    <span class="number-item final-answer" id="s6-res-num"></span>
+                                    <span class="number-item final-answer" id="res-num">7</span>
                                 </div>
                                 <div class="denominator">
-                                    <span class="number-item final-answer" id="s6-res-den"></span>
+                                    <span class="number-item final-answer" id="res-den">27</span>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="panel-box" id="s6-instruction-panel">
-                            <span id="s6-main-msg">Click a number in the <strong>numerator</strong> and a number in the <strong>denominator</strong> that share a common factor to cancel them.</span>
+                        <div class="panel-box" id="instruction-panel">
+                            <span id="main-msg">Click a number in the <strong>numerator</strong> and a number in the
+                                <strong>denominator</strong> that share a common factor to cancel them.</span>
                         </div>
 
-                        <div class="panel-box hidden" id="s6-factor-prompt">
-                            <div id="s6-input-section">
-                                <span>You selected <strong><span id="s6-selected-pair"></span></strong>. What factor do they share?</span>
+                        <div class="panel-box hidden" id="factor-prompt">
+                            <div id="input-section">
+                                <span>You selected <strong><span id="selected-pair"></span></strong>. What factor do
+                                    they share?</span>
                                 <div class="input-group">
-                                    <input type="number" id="s6-factor-input" class="interactive-input" placeholder="?">
-                                    <button id="s6-factor-submit" class="btn">Apply</button>
+                                    <input type="number" id="factor-input" class="interactive-input" placeholder="?">
+                                    <button id="factor-submit" class="btn">Apply</button>
                                 </div>
-                                <div id="s6-error-msg" class="error-msg hidden">That's not a valid common factor. Try again!</div>
+                                <div id="error-msg" class="error-msg hidden">That's not a valid common factor. Try
+                                    again!</div>
                             </div>
 
-                            <div id="s6-warning-section" class="hidden">
-                                <span id="s6-warning-text"></span>
+                            <div id="warning-section" class="hidden">
+                                <span id="warning-text"></span>
                                 <div class="input-group" style="margin-top: 15px;">
-                                    <button id="s6-btn-try-again" class="btn btn-secondary">Try Again</button>
-                                    <button id="s6-btn-continue" class="btn">Continue</button>
+                                    <button id="btn-try-again" class="btn btn-secondary">Try Again</button>
+                                    <button id="btn-continue" class="btn">Continue</button>
                                 </div>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="feedback" id="s6Feedback"></div>
-                    <button class="btn try-another-btn" id="s6NextBtn" onclick="loadS6()">Try Another Similar Problem</button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <!-- Step 8 (Final Page - Google Survey) -->
-    <div class="step" id="step8" style="padding: 0; background: white; height: 100%; flex-direction: column;">
-        <div style="text-align: center; padding: 12px 10px 5px 10px; background: #f5f8ff; border-bottom: 1px solid var(--border);">
-            <h2 style="margin: 0; color: var(--primary); font-size: 1.5rem; font-weight: 800;">🎉 Congrats! You did it! 🎉</h2>
+        <!-- Step 7 (Original Lesson 6) -->
+        <div class="step" id="step7">
+            <div class="column learn-col" id="s6-left">
+                <div class="col-header">
+                    <span class="section-title">🚀 Learn It!</span>
+                    <button class="caret-btn" onclick="toggleCol('s6-left', 's6-right')">▼</button>
+                </div>
+                <div class="col-content">
+                    <h2>Add, Subtract, Divide & Double-Decker Fractions</h2>
+                    <h3>Add and Subtract Fractions: Use a Common Denominator</h3>
+                    <p>If you're asked to add or subtract fractions, first consider whether it would be better to
+                        convert to percents or decimals instead. If you do decide to add or subtract in fraction form,
+                        follow these steps:</p>
+                    <ol>
+                        <li>Find a common denominator.</li>
+                        <li>Rewrite each fraction so that it is expressed using this common denominator.</li>
+                        <li>Add up the numerators only.</li>
+                    </ol>
+                    <p>Why don't you also add up the denominators? Think back to the pizza. If you ate 5 of the 8 slices
+                        (<span class="fraction-expr"><span class="fraction"><span class="numerator">5</span><span
+                                    class="denominator">8</span></span></span>) and Sam ate 3 of the 8 slices (<span
+                            class="fraction-expr"><span class="fraction"><span class="numerator">3</span><span
+                                    class="denominator">8</span></span></span>), together you ate <span
+                            class="fraction-expr"><span class="fraction"><span class="numerator">8</span><span
+                                    class="denominator">8</span></span></span> of the pizza—the whole thing!—not <span
+                            class="fraction-expr"><span class="fraction"><span class="numerator">8</span><span
+                                    class="denominator">16</span></span></span> or half the pizza.</p>
+
+                    <hr style="border: 0; border-top: 1px solid var(--border); margin: 20px 0;">
+
+                    <h3>Dividing Fractions: Use the Reciprocal</h3>
+                    <p>If you're asked to divide by a fraction (for example, divide by <span class="fraction-expr"><span
+                                class="fraction"><span class="numerator">3</span><span
+                                    class="denominator">4</span></span></span>), instead multiply by the reciprocal. The
+                        reciprocal of a fraction is the flip of that fraction. The reciprocal of <span
+                            class="fraction-expr"><span class="fraction"><span class="numerator">3</span><span
+                                    class="denominator">4</span></span></span> is <span class="fraction-expr"><span
+                                class="fraction"><span class="numerator">4</span><span
+                                    class="denominator">3</span></span></span>. What is the reciprocal of an integer?
+                        Think of an integer as a fraction with a denominator of 1. The reciprocal of 5 (or <span
+                            class="fraction-expr"><span class="fraction"><span class="numerator">5</span><span
+                                    class="denominator">1</span></span></span>) is <span class="fraction-expr"><span
+                                class="fraction"><span class="numerator">1</span><span
+                                    class="denominator">5</span></span></span>.</p>
+                    <p>In order to divide by a fraction, follow these steps:</p>
+                    <ol>
+                        <li>Change the divisor (the second number) into its reciprocal.</li>
+                        <li>Multiply the fractions (and simplify before you multiply!).</li>
+                    </ol>
+                    <hr style="border: 0; border-top: 1px solid var(--border); margin: 20px 0;">
+
+                    <h3>Split Up Double-Decker Fractions</h3>
+                    <p>The division of fractions can be shown by putting the fractions themselves into a double-decker
+                        fraction. You can rewrite this as the top fraction divided by the bottom fraction. Then, solve
+                        normally by using the reciprocal of the second fraction and then multiplying.</p>
+                    <p>In addition, you can often simplify more quickly by multiplying both top and bottom by a common
+                        denominator of the "fractions within the fraction".</p>
+                </div>
+            </div>
+
+            <div class="column do-it-col" id="s6-right">
+                <div class="col-header">
+                    <span class="section-title">⚡️ Do It!</span>
+                    <button class="caret-btn" onclick="toggleCol('s6-right', 's6-left')">▼</button>
+                </div>
+                <div class="col-content">
+                    <div class="interactive-panel">
+                        <h3>🥞 Double-Decker Demolition</h3>
+                        <p>Convert the double-decker fraction into a standard multiplication expression using the
+                            reciprocal rule, then cancel common factors to find the final simplified answer.</p>
+                        <div style="display: flex; justify-content: space-between; font-size: 0.9rem; color: #666;">
+                            <span class="attempt-remain">Attempts remaining: <span id="s6-attempts">5</span></span>
+                        </div>
+
+                        <div class="quote-block" id="s6-problem-text"
+                            style="text-align:center; background-color: #f8fafc; border-color: #94a3b8;">
+                        </div>
+
+                        <div style="margin: 20px 0;">
+                            <span class="interactive-label">Step 1: Multiply by the reciprocal of the
+                                denominator.</span>
+                            <div
+                                style="display: flex; align-items: center; justify-content: center; gap: 15px; background: #fff; padding: 15px; border-radius: 8px; border: 2px dashed #cbd5e1;">
+                                <span id="s6-top-frac" style="font-size: 1.3rem;"></span>
+                                <span style="font-size: 1.5rem; font-weight:bold; color: var(--primary);">&times;</span>
+                                <div style="display: flex; flex-direction: column; align-items: center; gap: 5px;">
+                                    <input type="number" id="s6-recN" class="interactive-input" placeholder="Num">
+                                    <div style="width: 100%; height: 3px; background-color: var(--primary);"></div>
+                                    <input type="number" id="s6-recD" class="interactive-input" placeholder="Den">
+                                </div>
+                            </div>
+                            <button class="btn" style="width: 100%; margin-top: 10px;" id="checkS6Step1Btn"
+                                onclick="checkS6Step1()">Check Step 1 Reciprocal</button>
+                        </div>
+
+                        <div id="s6-step2-container" class="hidden"
+                            style="margin: 20px 0; padding-top: 15px; border-top: 1px dashed var(--border);">
+                            <span class="interactive-label">Step 2: Cancel common factors & solve for final
+                                product.</span>
+
+                            <div class="math-block" id="s6-math-block">
+                                <div class="fraction">
+                                    <div class="numerator clickable" id="s6-num1" data-val="">
+                                        <span class="number-item current-val"></span>
+                                    </div>
+                                    <div class="denominator clickable" id="s6-den1" data-val="">
+                                        <span class="number-item current-val"></span>
+                                    </div>
+                                </div>
+                                <div class="operator">&times;</div>
+                                <div class="fraction">
+                                    <div class="numerator clickable" id="s6-num2" data-val="">
+                                        <span class="number-item current-val"></span>
+                                    </div>
+                                    <div class="denominator clickable" id="s6-den2" data-val="">
+                                        <span class="number-item current-val"></span>
+                                    </div>
+                                </div>
+                                <div class="operator hidden" id="s6-equals">=</div>
+                                <div class="fraction hidden" id="s6-result-frac">
+                                    <div class="numerator">
+                                        <span class="number-item final-answer" id="s6-res-num"></span>
+                                    </div>
+                                    <div class="denominator">
+                                        <span class="number-item final-answer" id="s6-res-den"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="panel-box" id="s6-instruction-panel">
+                                <span id="s6-main-msg">Click a number in the <strong>numerator</strong> and a number in
+                                    the <strong>denominator</strong> that share a common factor to cancel them.</span>
+                            </div>
+
+                            <div class="panel-box hidden" id="s6-factor-prompt">
+                                <div id="s6-input-section">
+                                    <span>You selected <strong><span id="s6-selected-pair"></span></strong>. What factor
+                                        do they share?</span>
+                                    <div class="input-group">
+                                        <input type="number" id="s6-factor-input" class="interactive-input"
+                                            placeholder="?">
+                                        <button id="s6-factor-submit" class="btn">Apply</button>
+                                    </div>
+                                    <div id="s6-error-msg" class="error-msg hidden">That's not a valid common factor.
+                                        Try again!</div>
+                                </div>
+
+                                <div id="s6-warning-section" class="hidden">
+                                    <span id="s6-warning-text"></span>
+                                    <div class="input-group" style="margin-top: 15px;">
+                                        <button id="s6-btn-try-again" class="btn btn-secondary">Try Again</button>
+                                        <button id="s6-btn-continue" class="btn">Continue</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="feedback" id="s6Feedback"></div>
+                        <button class="btn try-another-btn" id="s6NextBtn" onclick="loadS6()">Try Another Similar
+                            Problem</button>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div style="flex: 1; height: calc(100% - 50px);">
-            <iframe src="https://forms.gle/SYWAH9rGruPnqLWp7" width="100%" height="100%" frameborder="0" marginheight="0" marginwidth="0" style="border:none; width:100%; height:100%;">Loading…</iframe>
+
+        <!-- Step 8 (Final Page - Google Survey) -->
+        <div class="step" id="step8" style="padding: 0; background: white; height: 100%; flex-direction: column;">
+            <div
+                style="text-align: center; padding: 12px 10px 5px 10px; background: #f5f8ff; border-bottom: 1px solid var(--border);">
+                <h2 style="margin: 0; color: var(--primary); font-size: 1.5rem; font-weight: 800;">🎉 Congrats! You did
+                    it! 🎉</h2>
+            </div>
+            <div style="flex: 1; height: calc(100% - 50px);">
+                <iframe src="https://forms.gle/SYWAH9rGruPnqLWp7" width="100%" height="100%" frameborder="0"
+                    marginheight="0" marginwidth="0" style="border:none; width:100%; height:100%;">Loading…</iframe>
+            </div>
         </div>
-    </div>
 
-</main>
+    </main>
 
 
-<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 
-<script>
-    // --- Navigation Logic ---
-    let currentStep = 1;
-    const totalSteps = 8;
+    <script>
+        // --- Navigation Logic ---
+        let currentStep = 1;
+        const totalSteps = 8;
 
-    function changeStep(direction) {
-        document.getElementById('step' + currentStep).classList.remove('active');
-        currentStep += direction;
-        
-        if (currentStep < 1) currentStep = 1;
-        if (currentStep > totalSteps) currentStep = totalSteps;
+        function changeStep(direction) {
+            document.getElementById('step' + currentStep).classList.remove('active');
+            currentStep += direction;
 
-        document.getElementById('step' + currentStep).classList.add('active');
-        document.getElementById('backBtn').disabled = (currentStep === 1);
-        document.getElementById('nextBtn').disabled = (currentStep === totalSteps); 
-        document.getElementById('nextBtn').innerText = "Next";
-        document.getElementById('stepBadge').innerText = currentStep + ' of ' + totalSteps;
-        
-        const fillPercent = ((currentStep - 1) / (totalSteps - 1)) * 100;
-        setTimeout(() => {
-            document.getElementById('progressBar').style.width = fillPercent + '%';
-            document.getElementById('progressPercentText').innerText = Math.round(fillPercent) + '%';
-        }, 50);
+            if (currentStep < 1) currentStep = 1;
+            if (currentStep > totalSteps) currentStep = totalSteps;
 
-        if (currentStep === totalSteps) {
-            try {
-                if (typeof confetti === 'function') {
-                    confetti({ particleCount: 150, spread: 80, origin: { y: 0.6 } });
+            document.getElementById('step' + currentStep).classList.add('active');
+            document.getElementById('backBtn').disabled = (currentStep === 1);
+            document.getElementById('nextBtn').disabled = (currentStep === totalSteps);
+            document.getElementById('nextBtn').innerText = "Next";
+            document.getElementById('stepBadge').innerText = currentStep + ' of ' + totalSteps;
+
+            const fillPercent = ((currentStep - 1) / (totalSteps - 1)) * 100;
+            setTimeout(() => {
+                document.getElementById('progressBar').style.width = fillPercent + '%';
+                document.getElementById('progressPercentText').innerText = Math.round(fillPercent) + '%';
+            }, 50);
+
+            if (currentStep === totalSteps) {
+                try {
+                    if (typeof confetti === 'function') {
+                        confetti({ particleCount: 150, spread: 80, origin: { y: 0.6 } });
+                    }
+                } catch (e) {
+                    // Fallback handled safely
                 }
-            } catch (e) {
-                // Fallback handled safely
             }
         }
-    }
 
-    function toggleCol(targetColId, siblingColId) {
-        const targetCol = document.getElementById(targetColId);
-        const siblingCol = document.getElementById(siblingColId);
-        
-        if (targetCol.classList.contains('collapsed')) {
-            targetCol.classList.remove('collapsed');
-        } else {
-            targetCol.classList.add('collapsed');
-            siblingCol.classList.remove('collapsed'); 
+        function toggleCol(targetColId, siblingColId) {
+            const targetCol = document.getElementById(targetColId);
+            const siblingCol = document.getElementById(siblingColId);
+
+            if (targetCol.classList.contains('collapsed')) {
+                targetCol.classList.remove('collapsed');
+            } else {
+                targetCol.classList.add('collapsed');
+                siblingCol.classList.remove('collapsed');
+            }
         }
-    }
 
-    function renderFracBold(num, den) {
-        return `<span class="fraction-expr prove-it-frac"><span class="fraction"><span class="numerator">${num}</span><span class="denominator">${den}</span></span></span>`;
-    }
+        function renderFracBold(num, den) {
+            return `<span class="fraction-expr prove-it-frac"><span class="fraction"><span class="numerator">${num}</span><span class="denominator">${den}</span></span></span>`;
+        }
 
-    // --- Step 2: Base Relationships ---
-    let s1Attempts = 5;
-    const s1DB = [
-        { text: "A class has 3 boys for every 5 girls.", q: "boys", n: 3, d: 8, p1: 3, p2: 5 },
-        { text: "A baker uses 2 cups of sugar for every 7 cups of flour.", q: "flour", n: 7, d: 9, p1: 2, p2: 7 },
-        { text: "A box has 4 red pens for every 3 blue pens.", q: "red pens", n: 4, d: 7, p1: 4, p2: 3 }
-    ];
-    let s1Current = null;
+        // --- Step 2: Base Relationships ---
+        let s1Attempts = 5;
+        const s1DB = [
+            { text: "A class has 3 boys for every 5 girls.", q: "boys", n: 3, d: 8, p1: 3, p2: 5 },
+            { text: "A baker uses 2 cups of sugar for every 7 cups of flour.", q: "flour", n: 7, d: 9, p1: 2, p2: 7 },
+            { text: "A box has 4 red pens for every 3 blue pens.", q: "red pens", n: 4, d: 7, p1: 4, p2: 3 }
+        ];
+        let s1Current = null;
 
-    function loadS1() {
-        if (s1Attempts <= 0) return;
-        s1Current = s1DB[Math.floor(Math.random() * s1DB.length)];
-        
-        document.getElementById('s1-problem-text').innerText = s1Current.text;
-        document.getElementById('s1-question-subject').innerHTML = `Fraction of total that are <strong>${s1Current.q}</strong>:`;
-        document.getElementById('s1-num').value = "";
-        document.getElementById('s1-den').value = "";
-        
-        document.getElementById('s1-num').disabled = false;
-        document.getElementById('s1-den').disabled = false;
-        
-        document.getElementById('s1Feedback').style.display = 'none';
-        document.getElementById('checkS1Btn').style.display = 'block';
-        document.getElementById('s1NextBtn').style.display = 'none';
-        document.getElementById('s1-attempts').innerText = s1Attempts;
-    }
+        function loadS1() {
+            if (s1Attempts <= 0) return;
+            s1Current = s1DB[Math.floor(Math.random() * s1DB.length)];
 
-    function checkS1() {
-        const num = parseInt(document.getElementById('s1-num').value);
-        const den = parseInt(document.getElementById('s1-den').value);
-        const feedback = document.getElementById('s1Feedback');
+            document.getElementById('s1-problem-text').innerText = s1Current.text;
+            document.getElementById('s1-question-subject').innerHTML = `Fraction of total that are <strong>${s1Current.q}</strong>:`;
+            document.getElementById('s1-num').value = "";
+            document.getElementById('s1-den').value = "";
 
-        if (isNaN(num) || isNaN(den)) {
-            feedback.className = "feedback error";
-            feedback.innerHTML = "Please enter both a numerator and a denominator.";
+            document.getElementById('s1-num').disabled = false;
+            document.getElementById('s1-den').disabled = false;
+
+            document.getElementById('s1Feedback').style.display = 'none';
+            document.getElementById('checkS1Btn').style.display = 'block';
+            document.getElementById('s1NextBtn').style.display = 'none';
+            document.getElementById('s1-attempts').innerText = s1Attempts;
+        }
+
+        function checkS1() {
+            const num = parseInt(document.getElementById('s1-num').value);
+            const den = parseInt(document.getElementById('s1-den').value);
+            const feedback = document.getElementById('s1Feedback');
+
+            if (isNaN(num) || isNaN(den)) {
+                feedback.className = "feedback error";
+                feedback.innerHTML = "Please enter both a numerator and a denominator.";
+                feedback.style.display = "block";
+                return;
+            }
+
+            if (num === s1Current.n && den === s1Current.d) {
+                feedback.className = "feedback success";
+                feedback.innerHTML = `<strong>Correct!</strong> The part is ${s1Current.n} and the whole is ${s1Current.d} (which is ${s1Current.p1} + ${s1Current.p2}).`;
+
+                document.getElementById('s1-num').disabled = true;
+                document.getElementById('s1-den').disabled = true;
+                document.getElementById('checkS1Btn').style.display = 'none';
+                s1Attempts--;
+                if (s1Attempts > 0) document.getElementById('s1NextBtn').style.display = 'block';
+            } else if (den === s1Current.p1 || den === s1Current.p2) {
+                feedback.className = "feedback error";
+                feedback.innerHTML = `<strong>Incorrect.</strong> You wrote a part-to-part ratio! A fraction requires the <em>total whole</em> in the denominator. Try adding the parts together.`;
+            } else {
+                feedback.className = "feedback error";
+                feedback.innerHTML = `<strong>Incorrect.</strong> Make sure your numerator matches the specific item asked for, and the denominator is the sum of both parts.`;
+            }
             feedback.style.display = "block";
-            return;
+            document.getElementById('s1-attempts').innerText = s1Attempts;
         }
 
-        if (num === s1Current.n && den === s1Current.d) {
-            feedback.className = "feedback success";
-            feedback.innerHTML = `<strong>Correct!</strong> The part is ${s1Current.n} and the whole is ${s1Current.d} (which is ${s1Current.p1} + ${s1Current.p2}).`;
-            
-            document.getElementById('s1-num').disabled = true;
-            document.getElementById('s1-den').disabled = true;
-            document.getElementById('checkS1Btn').style.display = 'none';
-            s1Attempts--;
-            if(s1Attempts > 0) document.getElementById('s1NextBtn').style.display = 'block';
-        } else if (den === s1Current.p1 || den === s1Current.p2) {
-            feedback.className = "feedback error";
-            feedback.innerHTML = `<strong>Incorrect.</strong> You wrote a part-to-part ratio! A fraction requires the <em>total whole</em> in the denominator. Try adding the parts together.`;
-        } else {
-            feedback.className = "feedback error";
-            feedback.innerHTML = `<strong>Incorrect.</strong> Make sure your numerator matches the specific item asked for, and the denominator is the sum of both parts.`;
-        }
-        feedback.style.display = "block";
-        document.getElementById('s1-attempts').innerText = s1Attempts;
-    }
+        // --- Step 3: Ratio Reversal Trap ---
+        let s2Attempts = 5;
+        const s2DB = [
+            { text: "For every 5 cats, there are 2 dogs.", q: "What is the ratio of dogs to cats?", opts: [{ a: "5:2", c: false }, { a: "2:5", c: true }, { a: "2:7", c: false }, { a: "5:7", c: false }], exp: "The problem listed cats first (5) then dogs (2), but asked for the ratio of DOGS to CATS. Order matters! The answer is 2:5." },
+            { text: "A team has 4 analysts and 9 developers.", q: "What is the ratio of developers to analysts?", opts: [{ a: "4:9", c: false }, { a: "9:4", c: true }, { a: "4:13", c: false }, { a: "9:13", c: false }], exp: "The problem listed analysts (4) then developers (9), but asked for developers first. The answer is 9:4." },
+        ];
+        let s2Current = null;
 
-    // --- Step 3: Ratio Reversal Trap ---
-    let s2Attempts = 5;
-    const s2DB = [
-        { text: "For every 5 cats, there are 2 dogs.", q: "What is the ratio of dogs to cats?", opts: [{a: "5:2", c: false}, {a: "2:5", c: true}, {a: "2:7", c: false}, {a: "5:7", c: false}], exp: "The problem listed cats first (5) then dogs (2), but asked for the ratio of DOGS to CATS. Order matters! The answer is 2:5." },
-        { text: "A team has 4 analysts and 9 developers.", q: "What is the ratio of developers to analysts?", opts: [{a: "4:9", c: false}, {a: "9:4", c: true}, {a: "4:13", c: false}, {a: "9:13", c: false}], exp: "The problem listed analysts (4) then developers (9), but asked for developers first. The answer is 9:4." },
-    ];
-    let s2Current = null;
+        function loadS2() {
+            if (s2Attempts <= 0) return;
+            s2Current = s2DB[Math.floor(Math.random() * s2DB.length)];
 
-    function loadS2() {
-        if (s2Attempts <= 0) return;
-        s2Current = s2DB[Math.floor(Math.random() * s2DB.length)];
-        
-        document.getElementById('s2-problem-text').innerHTML = `${s2Current.text}<br><br><span style="color:var(--primary);">${s2Current.q}</span>`;
-        
-        const container = document.getElementById('s2-options-container');
-        container.innerHTML = '';
-        
-        let shuffledOpts = [...s2Current.opts].sort(() => Math.random() - 0.5);
-        
-        shuffledOpts.forEach(opt => {
-            let div = document.createElement('div');
-            div.className = 'option-card';
-            div.innerHTML = `🔘 ${opt.a}`;
-            div.onclick = function() {
-                const cards = container.children;
-                for(let c of cards) { c.style.pointerEvents = 'none'; c.classList.remove('selected'); }
-                this.classList.add('selected');
-                
-                const feedback = document.getElementById('s2Feedback');
-                if (opt.c) {
-                    feedback.className = "feedback success";
-                    feedback.innerHTML = `<strong>Spot on!</strong> ${s2Current.exp}`;
-                    s2Attempts--;
-                    if(s2Attempts > 0) document.getElementById('s2NextBtn').style.display = 'block';
-                } else {
-                    feedback.className = "feedback error";
-                    if (opt.a.includes('7') || opt.a.includes('13')) {
-                        feedback.innerHTML = `<strong>Incorrect.</strong> You found a fraction (part-to-whole), not a part-to-part ratio!`;
+            document.getElementById('s2-problem-text').innerHTML = `${s2Current.text}<br><br><span style="color:var(--primary);">${s2Current.q}</span>`;
+
+            const container = document.getElementById('s2-options-container');
+            container.innerHTML = '';
+
+            let shuffledOpts = [...s2Current.opts].sort(() => Math.random() - 0.5);
+
+            shuffledOpts.forEach(opt => {
+                let div = document.createElement('div');
+                div.className = 'option-card';
+                div.innerHTML = `🔘 ${opt.a}`;
+                div.onclick = function () {
+                    const cards = container.children;
+                    for (let c of cards) { c.style.pointerEvents = 'none'; c.classList.remove('selected'); }
+                    this.classList.add('selected');
+
+                    const feedback = document.getElementById('s2Feedback');
+                    if (opt.c) {
+                        feedback.className = "feedback success";
+                        feedback.innerHTML = `<strong>Spot on!</strong> ${s2Current.exp}`;
+                        s2Attempts--;
+                        if (s2Attempts > 0) document.getElementById('s2NextBtn').style.display = 'block';
                     } else {
-                        feedback.innerHTML = `<strong>It's a trap!</strong> You reversed the ratio. Pay very close attention to the requested order.`;
+                        feedback.className = "feedback error";
+                        if (opt.a.includes('7') || opt.a.includes('13')) {
+                            feedback.innerHTML = `<strong>Incorrect.</strong> You found a fraction (part-to-whole), not a part-to-part ratio!`;
+                        } else {
+                            feedback.innerHTML = `<strong>It's a trap!</strong> You reversed the ratio. Pay very close attention to the requested order.`;
+                        }
                     }
-                }
-                feedback.style.display = 'block';
-                document.getElementById('s2-attempts').innerText = s2Attempts;
-            };
-            container.appendChild(div);
-        });
+                    feedback.style.display = 'block';
+                    document.getElementById('s2-attempts').innerText = s2Attempts;
+                };
+                container.appendChild(div);
+            });
 
-        document.getElementById('s2Feedback').style.display = 'none';
-        document.getElementById('s2NextBtn').style.display = 'none';
-        document.getElementById('s2-attempts').innerText = s2Attempts;
-    }
-
-    // --- Step 4: Types of Fractions ---
-    let s3Attempts = 5;
-    const s3DB = [
-        { text: `If you have the fraction ${renderFracBold(3, 5)} and you increase the denominator by 2...`, ans: 'decreases' },
-        { text: `If you have the fraction ${renderFracBold(3, 5)} and you increase the numerator by 2...`, ans: 'increases' },
-        { text: `If you have the fraction ${renderFracBold(1, 4)} and you decrease the denominator by 1...`, ans: 'increases' }
-    ];
-    let s3Current = null;
-
-    function loadS3() {
-        if (s3Attempts <= 0) return;
-        s3Current = s3DB[Math.floor(Math.random() * s3DB.length)];
-        document.getElementById('s3-problem-text').innerHTML = s3Current.text;
-        
-        document.getElementById('s3Feedback').style.display = 'none';
-        document.getElementById('s3NextBtn').style.display = 'none';
-        
-        const cards = document.getElementById('s3-options-container').children;
-        for(let c of cards) { c.style.pointerEvents = 'auto'; c.classList.remove('selected'); }
-        
-        document.getElementById('s3-attempts').innerText = s3Attempts;
-    }
-
-    function checkS3(guess, el) {
-        const cards = document.getElementById('s3-options-container').children;
-        for(let c of cards) { c.style.pointerEvents = 'none'; }
-        el.classList.add('selected');
-        
-        const feedback = document.getElementById('s3Feedback');
-        if (guess === s3Current.ans) {
-            feedback.className = "feedback success";
-            feedback.innerHTML = `<strong>Correct!</strong> Based on the numerator/denominator rules, you accurately predicted the change.`;
-            s3Attempts--;
-            if(s3Attempts > 0) document.getElementById('s3NextBtn').style.display = 'block';
-        } else {
-            feedback.className = "feedback error";
-            feedback.innerHTML = `<strong>Incorrect.</strong> Review the rules on the left. Remember: increasing the denominator shrinks the value, while increasing the numerator grows the value.`;
+            document.getElementById('s2Feedback').style.display = 'none';
+            document.getElementById('s2NextBtn').style.display = 'none';
+            document.getElementById('s2-attempts').innerText = s2Attempts;
         }
-        feedback.style.display = 'block';
-        document.getElementById('s3-attempts').innerText = s3Attempts;
-    }
 
-    // --- Step 5: Slider Simulator ---
-    function updateFractions(val) {
-        const add = parseInt(val);
-        document.getElementById('addValue').innerText = add;
-        document.getElementById('tblAddVal').innerText = add;
+        // --- Step 4: Types of Fractions ---
+        let s3Attempts = 5;
+        const s3DB = [
+            { text: `If you have the fraction ${renderFracBold(3, 5)} and you increase the denominator by 2...`, ans: 'decreases' },
+            { text: `If you have the fraction ${renderFracBold(3, 5)} and you increase the numerator by 2...`, ans: 'increases' },
+            { text: `If you have the fraction ${renderFracBold(1, 4)} and you decrease the denominator by 1...`, ans: 'increases' }
+        ];
+        let s3Current = null;
 
-        const pN = 1 + add;
-        const pD = 2 + add;
-        document.getElementById('propNum').innerText = pN;
-        document.getElementById('propDen').innerText = pD;
-        document.getElementById('propDec').innerText = (pN/pD).toFixed(3);
+        function loadS3() {
+            if (s3Attempts <= 0) return;
+            s3Current = s3DB[Math.floor(Math.random() * s3DB.length)];
+            document.getElementById('s3-problem-text').innerHTML = s3Current.text;
 
-        const iN = 3 + add;
-        const iD = 2 + add;
-        document.getElementById('impNum').innerText = iN;
-        document.getElementById('impDen').innerText = iD;
-        document.getElementById('impDec').innerText = (iN/iD).toFixed(3);
-    }
+            document.getElementById('s3Feedback').style.display = 'none';
+            document.getElementById('s3NextBtn').style.display = 'none';
 
-    // --- Step 6: Cancellation Sandbox Logic ---
-    function initS5() {
-        const instructionPanel = document.getElementById('instruction-panel');
-        const mainMsg = document.getElementById('main-msg');
-        
-        const factorPrompt = document.getElementById('factor-prompt');
-        const inputSection = document.getElementById('input-section');
-        const warningSection = document.getElementById('warning-section');
-        
-        const selectedPairText = document.getElementById('selected-pair');
-        const factorInput = document.getElementById('factor-input');
-        const factorSubmit = document.getElementById('factor-submit');
-        const errorMsg = document.getElementById('error-msg');
-        
-        const warningText = document.getElementById('warning-text');
-        const btnTryAgain = document.getElementById('btn-try-again');
-        const btnContinue = document.getElementById('btn-continue');
-        
-        const clickables = document.querySelectorAll('#step6 .clickable');
+            const cards = document.getElementById('s3-options-container').children;
+            for (let c of cards) { c.style.pointerEvents = 'auto'; c.classList.remove('selected'); }
 
-        let selectedElement = null;
-        let pendingPair = null;
+            document.getElementById('s3-attempts').innerText = s3Attempts;
+        }
+
+        function checkS3(guess, el) {
+            const cards = document.getElementById('s3-options-container').children;
+            for (let c of cards) { c.style.pointerEvents = 'none'; }
+            el.classList.add('selected');
+
+            const feedback = document.getElementById('s3Feedback');
+            if (guess === s3Current.ans) {
+                feedback.className = "feedback success";
+                feedback.innerHTML = `<strong>Correct!</strong> Based on the numerator/denominator rules, you accurately predicted the change.`;
+                s3Attempts--;
+                if (s3Attempts > 0) document.getElementById('s3NextBtn').style.display = 'block';
+            } else {
+                feedback.className = "feedback error";
+                feedback.innerHTML = `<strong>Incorrect.</strong> Review the rules on the left. Remember: increasing the denominator shrinks the value, while increasing the numerator grows the value.`;
+            }
+            feedback.style.display = 'block';
+            document.getElementById('s3-attempts').innerText = s3Attempts;
+        }
+
+        // --- Step 5: Slider Simulator ---
+        function updateFractions(val) {
+            const add = parseInt(val);
+            document.getElementById('addValue').innerText = add;
+            document.getElementById('tblAddVal').innerText = add;
+
+            const pN = 1 + add;
+            const pD = 2 + add;
+            document.getElementById('propNum').innerText = pN;
+            document.getElementById('propDen').innerText = pD;
+            document.getElementById('propDec').innerText = (pN / pD).toFixed(3);
+
+            const iN = 3 + add;
+            const iD = 2 + add;
+            document.getElementById('impNum').innerText = iN;
+            document.getElementById('impDen').innerText = iD;
+            document.getElementById('impDec').innerText = (iN / iD).toFixed(3);
+        }
+
+        // --- Step 6: Cancellation Sandbox Logic ---
+        function initS5() {
+            const instructionPanel = document.getElementById('instruction-panel');
+            const mainMsg = document.getElementById('main-msg');
+
+            const factorPrompt = document.getElementById('factor-prompt');
+            const inputSection = document.getElementById('input-section');
+            const warningSection = document.getElementById('warning-section');
+
+            const selectedPairText = document.getElementById('selected-pair');
+            const factorInput = document.getElementById('factor-input');
+            const factorSubmit = document.getElementById('factor-submit');
+            const errorMsg = document.getElementById('error-msg');
+
+            const warningText = document.getElementById('warning-text');
+            const btnTryAgain = document.getElementById('btn-try-again');
+            const btnContinue = document.getElementById('btn-continue');
+
+            const clickables = document.querySelectorAll('#step6 .clickable');
+
+            let selectedElement = null;
+            let pendingPair = null;
+
+            function getGCF(a, b) {
+                return b === 0 ? a : getGCF(b, a % b);
+            }
+
+            clickables.forEach(el => {
+                el.addEventListener('click', () => {
+                    if (!factorPrompt.classList.contains('hidden')) return;
+
+                    if (selectedElement === el) {
+                        el.classList.remove('selected');
+                        selectedElement = null;
+                        return;
+                    }
+
+                    if (!selectedElement) {
+                        el.classList.add('selected');
+                        selectedElement = el;
+                        return;
+                    }
+
+                    let val1 = parseInt(selectedElement.getAttribute('data-val'));
+                    let val2 = parseInt(el.getAttribute('data-val'));
+                    let isTop1 = selectedElement.classList.contains('numerator');
+                    let isTop2 = el.classList.contains('numerator');
+
+                    if (isTop1 === isTop2) {
+                        mainMsg.innerHTML = "You must select one number from the top and one from the bottom.";
+                        selectedElement.classList.remove('selected');
+                        selectedElement = null;
+                        return;
+                    }
+
+                    let gcf = getGCF(val1, val2);
+                    if (gcf === 1) {
+                        mainMsg.innerHTML = `<strong>${val1}</strong> and <strong>${val2}</strong> don't share a common factor greater than 1. Try another pair!`;
+                        selectedElement.classList.remove('selected');
+                        el.classList.remove('selected');
+                        selectedElement = null;
+                    } else {
+                        triggerFactorPrompt(selectedElement, el, val1, val2, gcf);
+                    }
+                });
+            });
+
+            function triggerFactorPrompt(elA, elB, valA, valB, gcf) {
+                elB.classList.add('selected');
+
+                pendingPair = {
+                    elA: elA,
+                    elB: elB,
+                    valA: valA,
+                    valB: valB,
+                    gcf: gcf,
+                    userFactor: null
+                };
+
+                instructionPanel.classList.add('hidden');
+                factorPrompt.classList.remove('hidden');
+                inputSection.classList.remove('hidden');
+                warningSection.classList.add('hidden');
+
+                selectedPairText.textContent = `${valA} and ${valB}`;
+                factorInput.value = '';
+                errorMsg.classList.add('hidden');
+                factorInput.focus();
+            }
+
+            factorSubmit.addEventListener('click', () => {
+                const userFactor = parseInt(factorInput.value);
+
+                if (!userFactor || userFactor <= 1 || pendingPair.valA % userFactor !== 0 || pendingPair.valB % userFactor !== 0) {
+                    errorMsg.classList.remove('hidden');
+                    return;
+                }
+
+                pendingPair.userFactor = userFactor;
+                errorMsg.classList.add('hidden');
+
+                if (userFactor === pendingPair.gcf) {
+                    applyCancellation();
+                } else {
+                    inputSection.classList.add('hidden');
+                    warningSection.classList.remove('hidden');
+                    warningText.innerHTML = `This is a legitimate common factor, but it's not the <strong>greatest</strong> common factor. Would you like to try again or continue with the factor <strong>${userFactor}</strong>?`;
+                }
+            });
+
+            factorInput.addEventListener('keypress', function (e) {
+                if (e.key === 'Enter') factorSubmit.click();
+            });
+
+            btnTryAgain.addEventListener('click', () => {
+                warningSection.classList.add('hidden');
+                inputSection.classList.remove('hidden');
+                factorInput.value = '';
+                factorInput.focus();
+            });
+
+            btnContinue.addEventListener('click', () => {
+                applyCancellation();
+            });
+
+            function applyCancellation() {
+                let elA = pendingPair.elA;
+                let elB = pendingPair.elB;
+                let factor = pendingPair.userFactor;
+
+                let newA = pendingPair.valA / factor;
+                let newB = pendingPair.valB / factor;
+
+                elA.setAttribute('data-val', newA);
+                elB.setAttribute('data-val', newB);
+
+                let spanA = elA.querySelector('.current-val');
+                spanA.classList.remove('current-val');
+                spanA.classList.add('crossed-out');
+                elA.innerHTML += `<span class="number-item replacement-val current-val">${newA}</span>`;
+
+                let spanB = elB.querySelector('.current-val');
+                spanB.classList.remove('current-val');
+                spanB.classList.add('crossed-out');
+                elB.innerHTML += `<span class="number-item replacement-val current-val">${newB}</span>`;
+
+                elA.classList.remove('selected');
+                elB.classList.remove('selected');
+                selectedElement = null;
+                pendingPair = null;
+
+                factorPrompt.classList.add('hidden');
+                instructionPanel.classList.remove('hidden');
+
+                checkWinCondition();
+            }
+
+            function checkWinCondition() {
+                let n1 = parseInt(document.getElementById('num1').getAttribute('data-val'));
+                let d1 = parseInt(document.getElementById('den1').getAttribute('data-val'));
+                let n2 = parseInt(document.getElementById('num2').getAttribute('data-val'));
+                let d2 = parseInt(document.getElementById('den2').getAttribute('data-val'));
+
+                if (getGCF(n1, d1) === 1 && getGCF(n1, d2) === 1 && getGCF(n2, d1) === 1 && getGCF(n2, d2) === 1) {
+                    mainMsg.innerHTML = "Perfect! You've completely simplified the expression. Now multiply across.";
+
+                    document.getElementById('equals').classList.remove('hidden');
+                    document.getElementById('result-frac').classList.remove('hidden');
+
+                    document.getElementById('res-num').textContent = n1 * n2;
+                    document.getElementById('res-den').textContent = d1 * d2;
+
+                    document.querySelectorAll('#step6 .clickable').forEach(el => el.style.pointerEvents = 'none');
+                } else {
+                    mainMsg.innerHTML = "Great! You canceled out a factor. Keep looking for more pairs!";
+                }
+            }
+        }
+
+        // --- Step 7: Double Decker with Interactive Cancellation Task ---
+        let s6Attempts = 5;
+        let s6Index = 0;
+        const s6DB = [
+            { n1: 1, d1: 3, n2: 5, d2: 6, recN: 6, recD: 5, ansN: 2, ansD: 5 },
+            { n1: 2, d1: 5, n2: 4, d2: 15, recN: 15, recD: 4, ansN: 3, ansD: 2 },
+            { n1: 3, d1: 8, n2: 9, d2: 20, recN: 20, recD: 9, ansN: 5, ansD: 6 },
+            { n1: 5, d1: 12, n2: 7, d2: 18, recN: 18, recD: 7, ansN: 15, ansD: 14 },
+            { n1: 5, d1: 14, n2: 10, d2: 21, recN: 21, recD: 10, ansN: 3, ansD: 4 }
+        ];
+        let s6Current = null;
+        let s6SelectedElement = null;
+        let s6PendingPair = null;
 
         function getGCF(a, b) {
             return b === 0 ? a : getGCF(b, a % b);
         }
 
-        clickables.forEach(el => {
-            el.addEventListener('click', () => {
-                if (!factorPrompt.classList.contains('hidden')) return;
+        function loadS6() {
+            if (s6Attempts <= 0) return;
+            s6Current = s6DB[s6Index % s6DB.length];
+            s6Index++;
 
-                if (selectedElement === el) {
-                    el.classList.remove('selected');
-                    selectedElement = null;
-                    return;
-                }
-
-                if (!selectedElement) {
-                    el.classList.add('selected');
-                    selectedElement = el;
-                    return;
-                }
-
-                let val1 = parseInt(selectedElement.getAttribute('data-val'));
-                let val2 = parseInt(el.getAttribute('data-val'));
-                let isTop1 = selectedElement.classList.contains('numerator');
-                let isTop2 = el.classList.contains('numerator');
-
-                if (isTop1 === isTop2) {
-                    mainMsg.innerHTML = "You must select one number from the top and one from the bottom.";
-                    selectedElement.classList.remove('selected');
-                    selectedElement = null;
-                    return;
-                }
-
-                let gcf = getGCF(val1, val2);
-                if (gcf === 1) {
-                    mainMsg.innerHTML = `<strong>${val1}</strong> and <strong>${val2}</strong> don't share a common factor greater than 1. Try another pair!`;
-                    selectedElement.classList.remove('selected');
-                    el.classList.remove('selected');
-                    selectedElement = null;
-                } else {
-                    triggerFactorPrompt(selectedElement, el, val1, val2, gcf);
-                }
-            });
-        });
-
-        function triggerFactorPrompt(elA, elB, valA, valB, gcf) {
-            elB.classList.add('selected');
-            
-            pendingPair = {
-                elA: elA,
-                elB: elB,
-                valA: valA,
-                valB: valB,
-                gcf: gcf,
-                userFactor: null
-            };
-
-            instructionPanel.classList.add('hidden');
-            factorPrompt.classList.remove('hidden');
-            inputSection.classList.remove('hidden');
-            warningSection.classList.add('hidden');
-            
-            selectedPairText.textContent = `${valA} and ${valB}`;
-            factorInput.value = '';
-            errorMsg.classList.add('hidden');
-            factorInput.focus();
-        }
-
-        factorSubmit.addEventListener('click', () => {
-            const userFactor = parseInt(factorInput.value);
-
-            if (!userFactor || userFactor <= 1 || pendingPair.valA % userFactor !== 0 || pendingPair.valB % userFactor !== 0) {
-                errorMsg.classList.remove('hidden');
-                return;
-            }
-
-            pendingPair.userFactor = userFactor;
-            errorMsg.classList.add('hidden');
-
-            if (userFactor === pendingPair.gcf) {
-                applyCancellation();
-            } else {
-                inputSection.classList.add('hidden');
-                warningSection.classList.remove('hidden');
-                warningText.innerHTML = `This is a legitimate common factor, but it's not the <strong>greatest</strong> common factor. Would you like to try again or continue with the factor <strong>${userFactor}</strong>?`;
-            }
-        });
-
-        factorInput.addEventListener('keypress', function (e) {
-            if (e.key === 'Enter') factorSubmit.click();
-        });
-
-        btnTryAgain.addEventListener('click', () => {
-            warningSection.classList.add('hidden');
-            inputSection.classList.remove('hidden');
-            factorInput.value = '';
-            factorInput.focus();
-        });
-
-        btnContinue.addEventListener('click', () => {
-            applyCancellation();
-        });
-
-        function applyCancellation() {
-            let elA = pendingPair.elA;
-            let elB = pendingPair.elB;
-            let factor = pendingPair.userFactor;
-
-            let newA = pendingPair.valA / factor;
-            let newB = pendingPair.valB / factor;
-
-            elA.setAttribute('data-val', newA);
-            elB.setAttribute('data-val', newB);
-
-            let spanA = elA.querySelector('.current-val');
-            spanA.classList.remove('current-val');
-            spanA.classList.add('crossed-out');
-            elA.innerHTML += `<span class="number-item replacement-val current-val">${newA}</span>`;
-
-            let spanB = elB.querySelector('.current-val');
-            spanB.classList.remove('current-val');
-            spanB.classList.add('crossed-out');
-            elB.innerHTML += `<span class="number-item replacement-val current-val">${newB}</span>`;
-
-            elA.classList.remove('selected');
-            elB.classList.remove('selected');
-            selectedElement = null;
-            pendingPair = null;
-
-            factorPrompt.classList.add('hidden');
-            instructionPanel.classList.remove('hidden');
-
-            checkWinCondition();
-        }
-
-        function checkWinCondition() {
-            let n1 = parseInt(document.getElementById('num1').getAttribute('data-val'));
-            let d1 = parseInt(document.getElementById('den1').getAttribute('data-val'));
-            let n2 = parseInt(document.getElementById('num2').getAttribute('data-val'));
-            let d2 = parseInt(document.getElementById('den2').getAttribute('data-val'));
-
-            if (getGCF(n1, d1) === 1 && getGCF(n1, d2) === 1 && getGCF(n2, d1) === 1 && getGCF(n2, d2) === 1) {
-                mainMsg.innerHTML = "Perfect! You've completely simplified the expression. Now multiply across.";
-                
-                document.getElementById('equals').classList.remove('hidden');
-                document.getElementById('result-frac').classList.remove('hidden');
-                
-                document.getElementById('res-num').textContent = n1 * n2;
-                document.getElementById('res-den').textContent = d1 * d2;
-                
-                document.querySelectorAll('#step6 .clickable').forEach(el => el.style.pointerEvents = 'none');
-            } else {
-                mainMsg.innerHTML = "Great! You canceled out a factor. Keep looking for more pairs!";
-            }
-        }
-    }
-
-    // --- Step 7: Double Decker with Interactive Cancellation Task ---
-    let s6Attempts = 5;
-    let s6Index = 0;
-    const s6DB = [
-        { n1: 1, d1: 3, n2: 5, d2: 6, recN: 6, recD: 5, ansN: 2, ansD: 5 },
-        { n1: 2, d1: 5, n2: 4, d2: 15, recN: 15, recD: 4, ansN: 3, ansD: 2 },
-        { n1: 3, d1: 8, n2: 9, d2: 20, recN: 20, recD: 9, ansN: 5, ansD: 6 },
-        { n1: 5, d1: 12, n2: 7, d2: 18, recN: 18, recD: 7, ansN: 15, ansD: 14 },
-        { n1: 5, d1: 14, n2: 10, d2: 21, recN: 21, recD: 10, ansN: 3, ansD: 4 }
-    ];
-    let s6Current = null;
-    let s6SelectedElement = null;
-    let s6PendingPair = null;
-
-    function getGCF(a, b) {
-        return b === 0 ? a : getGCF(b, a % b);
-    }
-
-    function loadS6() {
-        if (s6Attempts <= 0) return;
-        s6Current = s6DB[s6Index % s6DB.length];
-        s6Index++;
-        
-        const doubleDecker = `<div style="display:inline-flex; flex-direction:column; align-items:center;">
+            const doubleDecker = `<div style="display:inline-flex; flex-direction:column; align-items:center;">
             <div>${renderFracBold(s6Current.n1, s6Current.d1)}</div>
             <div style="width:100%; border-bottom: 3px solid var(--primary); margin: 5px 0;"></div>
             <div>${renderFracBold(s6Current.n2, s6Current.d2)}</div>
         </div>`;
-        document.getElementById('s6-problem-text').innerHTML = doubleDecker;
-        document.getElementById('s6-top-frac').innerHTML = renderFracBold(s6Current.n1, s6Current.d1);
+            document.getElementById('s6-problem-text').innerHTML = doubleDecker;
+            document.getElementById('s6-top-frac').innerHTML = renderFracBold(s6Current.n1, s6Current.d1);
 
-        document.getElementById('s6-recN').value = "";
-        document.getElementById('s6-recD').value = "";
-        document.getElementById('s6-recN').disabled = false;
-        document.getElementById('s6-recD').disabled = false;
+            document.getElementById('s6-recN').value = "";
+            document.getElementById('s6-recD').value = "";
+            document.getElementById('s6-recN').disabled = false;
+            document.getElementById('s6-recD').disabled = false;
 
-        document.getElementById('checkS6Step1Btn').style.display = 'block';
-        document.getElementById('s6-step2-container').classList.add('hidden');
-        document.getElementById('s6Feedback').style.display = 'none';
-        document.getElementById('s6NextBtn').style.display = 'none';
-        document.getElementById('s6-attempts').innerText = s6Attempts;
-    }
-
-    function checkS6Step1() {
-        const rn = parseInt(document.getElementById('s6-recN').value);
-        const rd = parseInt(document.getElementById('s6-recD').value);
-        const feedback = document.getElementById('s6Feedback');
-
-        if (isNaN(rn) || isNaN(rd)) {
-            feedback.className = "feedback error";
-            feedback.innerHTML = "Please enter both the numerator and denominator of the reciprocal.";
-            feedback.style.display = "block";
-            return;
+            document.getElementById('checkS6Step1Btn').style.display = 'block';
+            document.getElementById('s6-step2-container').classList.add('hidden');
+            document.getElementById('s6Feedback').style.display = 'none';
+            document.getElementById('s6NextBtn').style.display = 'none';
+            document.getElementById('s6-attempts').innerText = s6Attempts;
         }
 
-        if (rn === s6Current.recN && rd === s6Current.recD) {
-            feedback.className = "feedback success";
-            feedback.innerHTML = `<strong>Step 1 Correct!</strong> You flipped the bottom fraction to get the reciprocal. Now cancel common factors across the expression in Step 2 below.`;
-            feedback.style.display = "block";
+        function checkS6Step1() {
+            const rn = parseInt(document.getElementById('s6-recN').value);
+            const rd = parseInt(document.getElementById('s6-recD').value);
+            const feedback = document.getElementById('s6Feedback');
 
-            document.getElementById('s6-recN').disabled = true;
-            document.getElementById('s6-recD').disabled = true;
-            document.getElementById('checkS6Step1Btn').style.display = 'none';
-
-            initS6Step2();
-        } else {
-            feedback.className = "feedback error";
-            feedback.innerHTML = `<strong>Check Step 1.</strong> To divide by a fraction, multiply by the reciprocal of the <em>bottom</em> fraction. (Flip the numerator and denominator of the bottom term).`;
-            feedback.style.display = "block";
-        }
-    }
-
-    function initS6Step2() {
-        document.getElementById('s6-step2-container').classList.remove('hidden');
-
-        s6SelectedElement = null;
-        s6PendingPair = null;
-
-        const num1 = document.getElementById('s6-num1');
-        const den1 = document.getElementById('s6-den1');
-        const num2 = document.getElementById('s6-num2');
-        const den2 = document.getElementById('s6-den2');
-
-        num1.setAttribute('data-val', s6Current.n1);
-        num1.innerHTML = `<span class="number-item current-val">${s6Current.n1}</span>`;
-        num1.classList.remove('selected');
-        num1.style.pointerEvents = 'auto';
-
-        den1.setAttribute('data-val', s6Current.d1);
-        den1.innerHTML = `<span class="number-item current-val">${s6Current.d1}</span>`;
-        den1.classList.remove('selected');
-        den1.style.pointerEvents = 'auto';
-
-        num2.setAttribute('data-val', s6Current.recN);
-        num2.innerHTML = `<span class="number-item current-val">${s6Current.recN}</span>`;
-        num2.classList.remove('selected');
-        num2.style.pointerEvents = 'auto';
-
-        den2.setAttribute('data-val', s6Current.recD);
-        den2.innerHTML = `<span class="number-item current-val">${s6Current.recD}</span>`;
-        den2.classList.remove('selected');
-        den2.style.pointerEvents = 'auto';
-
-        document.getElementById('s6-equals').classList.add('hidden');
-        document.getElementById('s6-result-frac').classList.add('hidden');
-
-        document.getElementById('s6-instruction-panel').classList.remove('hidden');
-        document.getElementById('s6-main-msg').innerHTML = "Click a number in the <strong>numerator</strong> and a number in the <strong>denominator</strong> that share a common factor to cancel them.";
-
-        document.getElementById('s6-factor-prompt').classList.add('hidden');
-    }
-
-    function setupS6Clickables() {
-        const clickables = document.querySelectorAll('#step7 .clickable');
-        const instructionPanel = document.getElementById('s6-instruction-panel');
-        const mainMsg = document.getElementById('s6-main-msg');
-        const factorPrompt = document.getElementById('s6-factor-prompt');
-        const inputSection = document.getElementById('s6-input-section');
-        const warningSection = document.getElementById('s6-warning-section');
-        const selectedPairText = document.getElementById('s6-selected-pair');
-        const factorInput = document.getElementById('s6-factor-input');
-        const factorSubmit = document.getElementById('s6-factor-submit');
-        const errorMsg = document.getElementById('s6-error-msg');
-        const warningText = document.getElementById('s6-warning-text');
-        const btnTryAgain = document.getElementById('s6-btn-try-again');
-        const btnContinue = document.getElementById('s6-btn-continue');
-
-        clickables.forEach(el => {
-            el.addEventListener('click', () => {
-                if (!factorPrompt.classList.contains('hidden')) return;
-
-                if (s6SelectedElement === el) {
-                    el.classList.remove('selected');
-                    s6SelectedElement = null;
-                    return;
-                }
-
-                if (!s6SelectedElement) {
-                    el.classList.add('selected');
-                    s6SelectedElement = el;
-                    return;
-                }
-
-                let val1 = parseInt(s6SelectedElement.getAttribute('data-val'));
-                let val2 = parseInt(el.getAttribute('data-val'));
-                let isTop1 = s6SelectedElement.classList.contains('numerator');
-                let isTop2 = el.classList.contains('numerator');
-
-                if (isTop1 === isTop2) {
-                    mainMsg.innerHTML = "You must select one number from the top and one from the bottom.";
-                    s6SelectedElement.classList.remove('selected');
-                    s6SelectedElement = null;
-                    return;
-                }
-
-                let gcf = getGCF(val1, val2);
-                if (gcf === 1) {
-                    mainMsg.innerHTML = `<strong>${val1}</strong> and <strong>${val2}</strong> don't share a common factor greater than 1. Try another pair!`;
-                    s6SelectedElement.classList.remove('selected');
-                    el.classList.remove('selected');
-                    s6SelectedElement = null;
-                } else {
-                    triggerS6FactorPrompt(s6SelectedElement, el, val1, val2, gcf);
-                }
-            });
-        });
-
-        function triggerS6FactorPrompt(elA, elB, valA, valB, gcf) {
-            elB.classList.add('selected');
-            
-            s6PendingPair = {
-                elA: elA,
-                elB: elB,
-                valA: valA,
-                valB: valB,
-                gcf: gcf,
-                userFactor: null
-            };
-
-            instructionPanel.classList.add('hidden');
-            factorPrompt.classList.remove('hidden');
-            inputSection.classList.remove('hidden');
-            warningSection.classList.add('hidden');
-            
-            selectedPairText.textContent = `${valA} and ${valB}`;
-            factorInput.value = '';
-            errorMsg.classList.add('hidden');
-            factorInput.focus();
-        }
-
-        factorSubmit.addEventListener('click', () => {
-            const userFactor = parseInt(factorInput.value);
-
-            if (!userFactor || userFactor <= 1 || s6PendingPair.valA % userFactor !== 0 || s6PendingPair.valB % userFactor !== 0) {
-                errorMsg.classList.remove('hidden');
+            if (isNaN(rn) || isNaN(rd)) {
+                feedback.className = "feedback error";
+                feedback.innerHTML = "Please enter both the numerator and denominator of the reciprocal.";
+                feedback.style.display = "block";
                 return;
             }
 
-            s6PendingPair.userFactor = userFactor;
-            errorMsg.classList.add('hidden');
+            if (rn === s6Current.recN && rd === s6Current.recD) {
+                feedback.className = "feedback success";
+                feedback.innerHTML = `<strong>Step 1 Correct!</strong> You flipped the bottom fraction to get the reciprocal. Now cancel common factors across the expression in Step 2 below.`;
+                feedback.style.display = "block";
 
-            if (userFactor === s6PendingPair.gcf) {
-                applyS6Cancellation();
+                document.getElementById('s6-recN').disabled = true;
+                document.getElementById('s6-recD').disabled = true;
+                document.getElementById('checkS6Step1Btn').style.display = 'none';
+
+                initS6Step2();
             } else {
-                inputSection.classList.add('hidden');
-                warningSection.classList.remove('hidden');
-                warningText.innerHTML = `This is a legitimate common factor, but it's not the <strong>greatest</strong> common factor. Would you like to try again or continue with the factor <strong>${userFactor}</strong>?`;
+                feedback.className = "feedback error";
+                feedback.innerHTML = `<strong>Check Step 1.</strong> To divide by a fraction, multiply by the reciprocal of the <em>bottom</em> fraction. (Flip the numerator and denominator of the bottom term).`;
+                feedback.style.display = "block";
             }
-        });
+        }
 
-        factorInput.addEventListener('keypress', function (e) {
-            if (e.key === 'Enter') factorSubmit.click();
-        });
+        function initS6Step2() {
+            document.getElementById('s6-step2-container').classList.remove('hidden');
 
-        btnTryAgain.addEventListener('click', () => {
-            warningSection.classList.add('hidden');
-            inputSection.classList.remove('hidden');
-            factorInput.value = '';
-            factorInput.focus();
-        });
-
-        btnContinue.addEventListener('click', () => {
-            applyS6Cancellation();
-        });
-
-        function applyS6Cancellation() {
-            let elA = s6PendingPair.elA;
-            let elB = s6PendingPair.elB;
-            let factor = s6PendingPair.userFactor;
-
-            let newA = s6PendingPair.valA / factor;
-            let newB = s6PendingPair.valB / factor;
-
-            elA.setAttribute('data-val', newA);
-            elB.setAttribute('data-val', newB);
-
-            let spanA = elA.querySelector('.current-val');
-            spanA.classList.remove('current-val');
-            spanA.classList.add('crossed-out');
-            elA.innerHTML += `<span class="number-item replacement-val current-val">${newA}</span>`;
-
-            let spanB = elB.querySelector('.current-val');
-            spanB.classList.remove('current-val');
-            spanB.classList.add('crossed-out');
-            elB.innerHTML += `<span class="number-item replacement-val current-val">${newB}</span>`;
-
-            elA.classList.remove('selected');
-            elB.classList.remove('selected');
             s6SelectedElement = null;
             s6PendingPair = null;
 
-            factorPrompt.classList.add('hidden');
-            instructionPanel.classList.remove('hidden');
+            const num1 = document.getElementById('s6-num1');
+            const den1 = document.getElementById('s6-den1');
+            const num2 = document.getElementById('s6-num2');
+            const den2 = document.getElementById('s6-den2');
 
-            checkS6WinCondition();
+            num1.setAttribute('data-val', s6Current.n1);
+            num1.innerHTML = `<span class="number-item current-val">${s6Current.n1}</span>`;
+            num1.classList.remove('selected');
+            num1.style.pointerEvents = 'auto';
+
+            den1.setAttribute('data-val', s6Current.d1);
+            den1.innerHTML = `<span class="number-item current-val">${s6Current.d1}</span>`;
+            den1.classList.remove('selected');
+            den1.style.pointerEvents = 'auto';
+
+            num2.setAttribute('data-val', s6Current.recN);
+            num2.innerHTML = `<span class="number-item current-val">${s6Current.recN}</span>`;
+            num2.classList.remove('selected');
+            num2.style.pointerEvents = 'auto';
+
+            den2.setAttribute('data-val', s6Current.recD);
+            den2.innerHTML = `<span class="number-item current-val">${s6Current.recD}</span>`;
+            den2.classList.remove('selected');
+            den2.style.pointerEvents = 'auto';
+
+            document.getElementById('s6-equals').classList.add('hidden');
+            document.getElementById('s6-result-frac').classList.add('hidden');
+
+            document.getElementById('s6-instruction-panel').classList.remove('hidden');
+            document.getElementById('s6-main-msg').innerHTML = "Click a number in the <strong>numerator</strong> and a number in the <strong>denominator</strong> that share a common factor to cancel them.";
+
+            document.getElementById('s6-factor-prompt').classList.add('hidden');
         }
 
-        function checkS6WinCondition() {
-            let n1 = parseInt(document.getElementById('s6-num1').getAttribute('data-val'));
-            let d1 = parseInt(document.getElementById('s6-den1').getAttribute('data-val'));
-            let n2 = parseInt(document.getElementById('s6-num2').getAttribute('data-val'));
-            let d2 = parseInt(document.getElementById('s6-den2').getAttribute('data-val'));
+        function setupS6Clickables() {
+            const clickables = document.querySelectorAll('#step7 .clickable');
+            const instructionPanel = document.getElementById('s6-instruction-panel');
+            const mainMsg = document.getElementById('s6-main-msg');
+            const factorPrompt = document.getElementById('s6-factor-prompt');
+            const inputSection = document.getElementById('s6-input-section');
+            const warningSection = document.getElementById('s6-warning-section');
+            const selectedPairText = document.getElementById('s6-selected-pair');
+            const factorInput = document.getElementById('s6-factor-input');
+            const factorSubmit = document.getElementById('s6-factor-submit');
+            const errorMsg = document.getElementById('s6-error-msg');
+            const warningText = document.getElementById('s6-warning-text');
+            const btnTryAgain = document.getElementById('s6-btn-try-again');
+            const btnContinue = document.getElementById('s6-btn-continue');
 
-            if (getGCF(n1, d1) === 1 && getGCF(n1, d2) === 1 && getGCF(n2, d1) === 1 && getGCF(n2, d2) === 1) {
-                mainMsg.innerHTML = "Perfect! You've completely simplified the expression. Now multiply across.";
-                
-                document.getElementById('s6-equals').classList.remove('hidden');
-                document.getElementById('s6-result-frac').classList.remove('hidden');
-                
-                document.getElementById('s6-res-num').textContent = n1 * n2;
-                document.getElementById('s6-res-den').textContent = d1 * d2;
-                
-                const feedback = document.getElementById('s6Feedback');
-                feedback.className = "feedback success";
-                feedback.innerHTML = `<strong>Excellent!</strong> You flipped the bottom fraction to get the reciprocal, then simplified and multiplied correctly.`;
-                feedback.style.display = "block";
+            clickables.forEach(el => {
+                el.addEventListener('click', () => {
+                    if (!factorPrompt.classList.contains('hidden')) return;
 
-                s6Attempts--;
-                document.getElementById('s6-attempts').innerText = s6Attempts;
-                if (s6Attempts > 0) document.getElementById('s6NextBtn').style.display = 'block';
+                    if (s6SelectedElement === el) {
+                        el.classList.remove('selected');
+                        s6SelectedElement = null;
+                        return;
+                    }
 
-                document.querySelectorAll('#step7 .clickable').forEach(el => el.style.pointerEvents = 'none');
-            } else {
-                mainMsg.innerHTML = "Great! You canceled out a factor. Keep looking for more pairs!";
+                    if (!s6SelectedElement) {
+                        el.classList.add('selected');
+                        s6SelectedElement = el;
+                        return;
+                    }
+
+                    let val1 = parseInt(s6SelectedElement.getAttribute('data-val'));
+                    let val2 = parseInt(el.getAttribute('data-val'));
+                    let isTop1 = s6SelectedElement.classList.contains('numerator');
+                    let isTop2 = el.classList.contains('numerator');
+
+                    if (isTop1 === isTop2) {
+                        mainMsg.innerHTML = "You must select one number from the top and one from the bottom.";
+                        s6SelectedElement.classList.remove('selected');
+                        s6SelectedElement = null;
+                        return;
+                    }
+
+                    let gcf = getGCF(val1, val2);
+                    if (gcf === 1) {
+                        mainMsg.innerHTML = `<strong>${val1}</strong> and <strong>${val2}</strong> don't share a common factor greater than 1. Try another pair!`;
+                        s6SelectedElement.classList.remove('selected');
+                        el.classList.remove('selected');
+                        s6SelectedElement = null;
+                    } else {
+                        triggerS6FactorPrompt(s6SelectedElement, el, val1, val2, gcf);
+                    }
+                });
+            });
+
+            function triggerS6FactorPrompt(elA, elB, valA, valB, gcf) {
+                elB.classList.add('selected');
+
+                s6PendingPair = {
+                    elA: elA,
+                    elB: elB,
+                    valA: valA,
+                    valB: valB,
+                    gcf: gcf,
+                    userFactor: null
+                };
+
+                instructionPanel.classList.add('hidden');
+                factorPrompt.classList.remove('hidden');
+                inputSection.classList.remove('hidden');
+                warningSection.classList.add('hidden');
+
+                selectedPairText.textContent = `${valA} and ${valB}`;
+                factorInput.value = '';
+                errorMsg.classList.add('hidden');
+                factorInput.focus();
+            }
+
+            factorSubmit.addEventListener('click', () => {
+                const userFactor = parseInt(factorInput.value);
+
+                if (!userFactor || userFactor <= 1 || s6PendingPair.valA % userFactor !== 0 || s6PendingPair.valB % userFactor !== 0) {
+                    errorMsg.classList.remove('hidden');
+                    return;
+                }
+
+                s6PendingPair.userFactor = userFactor;
+                errorMsg.classList.add('hidden');
+
+                if (userFactor === s6PendingPair.gcf) {
+                    applyS6Cancellation();
+                } else {
+                    inputSection.classList.add('hidden');
+                    warningSection.classList.remove('hidden');
+                    warningText.innerHTML = `This is a legitimate common factor, but it's not the <strong>greatest</strong> common factor. Would you like to try again or continue with the factor <strong>${userFactor}</strong>?`;
+                }
+            });
+
+            factorInput.addEventListener('keypress', function (e) {
+                if (e.key === 'Enter') factorSubmit.click();
+            });
+
+            btnTryAgain.addEventListener('click', () => {
+                warningSection.classList.add('hidden');
+                inputSection.classList.remove('hidden');
+                factorInput.value = '';
+                factorInput.focus();
+            });
+
+            btnContinue.addEventListener('click', () => {
+                applyS6Cancellation();
+            });
+
+            function applyS6Cancellation() {
+                let elA = s6PendingPair.elA;
+                let elB = s6PendingPair.elB;
+                let factor = s6PendingPair.userFactor;
+
+                let newA = s6PendingPair.valA / factor;
+                let newB = s6PendingPair.valB / factor;
+
+                elA.setAttribute('data-val', newA);
+                elB.setAttribute('data-val', newB);
+
+                let spanA = elA.querySelector('.current-val');
+                spanA.classList.remove('current-val');
+                spanA.classList.add('crossed-out');
+                elA.innerHTML += `<span class="number-item replacement-val current-val">${newA}</span>`;
+
+                let spanB = elB.querySelector('.current-val');
+                spanB.classList.remove('current-val');
+                spanB.classList.add('crossed-out');
+                elB.innerHTML += `<span class="number-item replacement-val current-val">${newB}</span>`;
+
+                elA.classList.remove('selected');
+                elB.classList.remove('selected');
+                s6SelectedElement = null;
+                s6PendingPair = null;
+
+                factorPrompt.classList.add('hidden');
+                instructionPanel.classList.remove('hidden');
+
+                checkS6WinCondition();
+            }
+
+            function checkS6WinCondition() {
+                let n1 = parseInt(document.getElementById('s6-num1').getAttribute('data-val'));
+                let d1 = parseInt(document.getElementById('s6-den1').getAttribute('data-val'));
+                let n2 = parseInt(document.getElementById('s6-num2').getAttribute('data-val'));
+                let d2 = parseInt(document.getElementById('s6-den2').getAttribute('data-val'));
+
+                if (getGCF(n1, d1) === 1 && getGCF(n1, d2) === 1 && getGCF(n2, d1) === 1 && getGCF(n2, d2) === 1) {
+                    mainMsg.innerHTML = "Perfect! You've completely simplified the expression. Now multiply across.";
+
+                    document.getElementById('s6-equals').classList.remove('hidden');
+                    document.getElementById('s6-result-frac').classList.remove('hidden');
+
+                    document.getElementById('s6-res-num').textContent = n1 * n2;
+                    document.getElementById('s6-res-den').textContent = d1 * d2;
+
+                    const feedback = document.getElementById('s6Feedback');
+                    feedback.className = "feedback success";
+                    feedback.innerHTML = `<strong>Excellent!</strong> You flipped the bottom fraction to get the reciprocal, then simplified and multiplied correctly.`;
+                    feedback.style.display = "block";
+
+                    s6Attempts--;
+                    document.getElementById('s6-attempts').innerText = s6Attempts;
+                    if (s6Attempts > 0) document.getElementById('s6NextBtn').style.display = 'block';
+
+                    document.querySelectorAll('#step7 .clickable').forEach(el => el.style.pointerEvents = 'none');
+                } else {
+                    mainMsg.innerHTML = "Great! You canceled out a factor. Keep looking for more pairs!";
+                }
             }
         }
-    }
 
-    // Init scripts
-    window.onload = function() {
-        // Load widgets
-        loadS1();
-        loadS2();
-        loadS3();
-        updateFractions(0);
-        initS5();
-        setupS6Clickables();
-        loadS6();
-        changeStep(0);
-    };
-</script>
+        // Init scripts
+        window.onload = function () {
+            // Load widgets
+            loadS1();
+            loadS2();
+            loadS3();
+            updateFractions(0);
+            initS5();
+            setupS6Clickables();
+            loadS6();
+            changeStep(0);
+        };
+    </script>
 
 </body>
+
 </html>
